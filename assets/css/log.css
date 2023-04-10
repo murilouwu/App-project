@@ -1,0 +1,27 @@
+.bt{
+    border: none;
+    width: 40vw;
+    margin-top: 5vh;
+}
+.header2{
+    height: 25vh;
+    
+    
+}
+    .title{
+        font-size: 4vh;
+        font-family: 'FontBas';
+        font-weight: bolder;
+        font-style: italic;
+        color: var(--corD);
+    }
+.LmSenha{
+    background-color: var(--Invisible);
+    border: none;
+    color: var(--corC);
+    font-size: 2vh;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'FontBas';
+    height: 9vh;
+}

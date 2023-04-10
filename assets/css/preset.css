@@ -1,3 +1,4 @@
+@import "Boot.css";
 @import "vars.css";
   *{
     margin: 0px;
@@ -34,6 +35,6 @@ body{
 }
 
 @font-face{
-  font-family: 'DbFont';
-  src: url('../fonts/Sayadin-sans/Saiyan-Sans.ttf') format('truetype');
+  font-family: 'FontBas';
+  src: url('../fonts/Warownia-x5nq.otf') format('truetype');
 }
