@@ -8,6 +8,16 @@
     justify-content: center;
     align-items: center;
 }
+.Return{
+    font-size: 3vh;
+    color: var(--corC);
+    position: absolute;
+    margin-left: -76vw;
+    margin-top: 5vh;
+    background-color: var(--corB);
+    padding: 1vw 1vh;
+    border-radius: 6vw;
+}
 .FormCard{
     background-color: var(--corB);
     width: 70vw;
@@ -19,15 +29,18 @@
     border-radius: 6px;
 }
     .logoForm{
-        width: 19vw;
-        height: 9vh;
-        border: 1px solid var(--corC);
-        border-radius: 10vh;
+        width: 39vw;
+        height: 8vh;
+        border-radius: 1vh;
         margin-top: -4.5vh;
         background-color: var(--corB);
         display: flex;
         align-items: center;
         justify-content: center;
+        background-image: url(../imgs/Logo2.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .inputs{
         width: 80%;
@@ -37,10 +50,23 @@
         align-items: center;
         height: 27vh;
     }
+        .inputs p{
+            color: var(--corA);
+            font-size: 2vh;
+            width: 55vw;
+            font-weight: bold;
+            font-family: 'FontBas';
+        }
         .input{
             display: flex;
             flex-direction: column;
         }
+            .inputError{
+                color: red;
+                font-size: 1.5vh;
+                font-family: monospace;
+                font-weight: bold;
+            }
             .icon{
                 color: var(--corD);
                 font-size: 2vh;
@@ -51,10 +77,13 @@
                 border: 2px solid var(--corC);
                 border-radius: 5px;
                 padding: 1vh;
+                font-size: 1.7vh;
+                font-weight: bold;
+                font-family: monospace;
             }
                 .inputText::-webkit-input-placeholder{
-                    color: gray;
+                    color: var(--corA);
                 }
-                .input:focus{
+                .inputText:focus{
                     color: red;
                 }
