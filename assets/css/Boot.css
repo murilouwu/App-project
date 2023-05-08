@@ -85,5 +85,70 @@
                     color: var(--corA);
                 }
                 .inputText:focus{
-                    color: red;
+                    color: var(--corE);
                 }
+            
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    animation: 0.7s modal linear;
+    height: 28vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 82vw;
+    margin-top: 30vh;
+    background-color: var(--corB);
+    border-radius: 0.5vw;
+    box-shadow: 0px 0px 0px 2px var(--corC);
+}
+    .TextModal{
+        display: flex;
+        color: var(--corE);
+        font-family: 'FontBas';
+        align-items: center;
+        justify-content: space-around;
+        height: 8vh;
+        width: 70vw;
+        font-size: 3vh;
+        flex-direction: row;
+    }
+    .btnModal{
+        display: flex;
+        width: 34vw;
+        height: 6vh;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--corC);
+        border-radius: 1vw;
+        background-color: var(--corD);
+        color: var(--corE);
+        font-weight: bold;
+        font-family: 'FontBas';
+        font-size: 3vh;
+    }
+
+@keyframes modal{
+    0%{
+        margin-top: -80vh;
+    }
+    100%{
+        margin-top: 30vh;
+    }
+}
+
+@keyframes modalSumir{
+    0%{
+        display: flex;
+        opacity: 100%;
+    }
+    50%{
+        display: flex;
+        opacity: 50%;
+    }
+    100%{
+        opacity: 0%;
+        display: none;
+    }
+}

@@ -11,6 +11,10 @@
     <script src="https://kit.fontawesome.com/39cab4bf95.js" crossorigin="anonymous"></script>
 </head>
 <body class="RaibowBg-1">
+    <div class="modal" id="modal">
+        <p class="TextModal" id="ModalMensage">...</p>
+        <button class="btnModal" onclick="modalX('#modal', 0)"> ok </button>
+    </div>
     <a href="index.html" class="Return"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="header2 ds-flexC">
         <label class="title">Login</label>
@@ -36,6 +40,21 @@
         <img src="assets/imgs/Bussy.png" class="bus">
     </div>
     <script>
+        function modalText(id, text){
+            ocultar(id[1], 1);
+            let modalText = document.querySelector(id[0]);
+            modalText.innerHTML = text;
+        }
+        
+        function modalX(id, fun){
+            let time = 700;
+            let div = document.querySelector(id);
+            div.style.animation = (time/1000)+'s modalSumir linear';
+            setTimeout(()=>{
+                div.style.animation = (time/1000)+'s modal linear';
+                ocultar(id,0);
+            },time);
+        }
         function Pass(passo){
             let frm = document.querySelector('#Frm');
             let btn = document.querySelector('#EnvA');
@@ -60,8 +79,15 @@
             }else if(passo == 1){
                 //email tem que ser valido
                 if(document.querySelector('#EmailInput').value != ''){
-                    let nuns = numberRadom(9, 0, 6);
-                    let cod = Codigo(nuns.length, nuns);
+                    let lp = false;
+                    let cod = 0;
+                    while(lp==false){
+                        let nuns = numberRadom(9, 0, 6);
+                        cod = Codigo(nuns.length, nuns);
+                        if(!isNaN(cod)){
+                            lp = true;
+                        }
+                    }
                     //Cod para mandar email
                     frm.innerHTML = `
                     <div class="logoForm">Logo</div>
@@ -77,10 +103,11 @@
                     `;
                     btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="VerCod('+cod+')">Verificar</button>';
                 }else{
-                    alert('Email primeiro amigo!!');
+                    modalText(['#ModalMensage','#modal'], '<b>Email</b><b>primeiro</b><b>amigo!!</b>');
                 }
             }
         }
+        
         function FunCad(inputs, errors){
             let vls = [
                 document.querySelector(inputs[0]).value,
@@ -120,8 +147,60 @@
                 lbErro.innerHTML = text;
             }else{
                 lbErro.innerHTML = '';
-
+                let frm = document.querySelector('#Frm');
+                let btn = document.querySelector('#EnvA');
+                frm.innerHTML = `
+                <div class="logoForm">Logo</div>
+                <div class="inputs">
+                    <div class="input">
+                        <i class="icon fa-solid fa-lock"></i>
+                        <input type="password" class="inputText" placeholder="Nova senha" id="SenhaInput">
+                        <label class="inputError" id="Error0"></label>
+                    </div>
+                    <div class="input">
+                        <i class="icon fa-solid fa-lock"></i>
+                        <input type="password" class="inputText" placeholder="Confirmar senha" id="SenhaInputVerific">
+                        <label class="inputError" id="Error1"></label>
+                    </div>
+                </div>
+                `;
+                btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="SenhaVer([\'#SenhaInputVerific\', \'#SenhaInput\'], [\'#Error0\',\'#Error1\'])">Atualizar</button>';
             };
+        }
+        function SenhaVer(inputs, errors){
+            let vls = [
+                document.querySelector(inputs[0]).value,
+                document.querySelector(inputs[1]).value
+            ];
+            let lbErros =[
+                document.querySelector(errors[0]),
+                document.querySelector(errors[1])
+            ];
+
+            let quest = vls[0]==vls[1] ? true:false;
+            if(quest){
+                lbErros[1].innerHTML = '';
+                let frm = document.querySelector('#Frm');
+                let btn = document.querySelector('#EnvA');
+                frm.innerHTML = `
+                <div class="logoForm">Logo</div>
+                <div class="inputs">
+                    <div class="input">
+                        <i class="icon fa-solid fa-envelope"></i>
+                        <input type="email" class="inputText" placeholder="Email" id="EmailInput">
+                        <label class="inputError" id="Error0"></label>
+                    </div>
+                    <div class="input">
+                        <i class="icon fa-solid fa-lock"></i>
+                        <input type="password" class="inputText" placeholder="senha" id="SenhaInput">
+                        <label class="inputError" id="Error1"></label>
+                    </div>
+                </div>
+                `;
+                btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="FunCad([\'#EmailInput\', \'#SenhaInput\'], [\'#Error0\',\'#Error1\'])">Entrar</button>';
+            }else{
+                lbErros[1].innerHTML = 'Senhas diferentes!!';
+            }
         }
     </script>
 </body>
