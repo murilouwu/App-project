@@ -33,7 +33,7 @@
         border: 7px solid var(--corB);
         background-image: url('../imgs/perfil.png');
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         background-position: center;
     }
     .fun{
