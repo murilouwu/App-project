@@ -33,28 +33,13 @@
                 <label class="inputError" id="Error1"></label>
             </div>
         </div>
-        <button class="LmSenha" onclick="Pass(1)">Esqueci a senha</button>
+        <button class="LmSenha" onclick="Pass(1)"><pre>Esqueci</pre><pre>a</pre><pre>senha</pre></button>
     </div>
     <button class="btn bt" id="EnvA" onclick="FunCad(['#EmailInput', '#SenhaInput'], ['#Error0','#Error1'])">Entrar</button>
     <div class="fotter ds-flexC">
         <img src="assets/imgs/Bussy.png" class="bus">
     </div>
     <script>
-        function modalText(id, text){
-            ocultar(id[1], 1);
-            let modalText = document.querySelector(id[0]);
-            modalText.innerHTML = text;
-        }
-        
-        function modalX(id, fun){
-            let time = 700;
-            let div = document.querySelector(id);
-            div.style.animation = (time/1000)+'s modalSumir linear';
-            setTimeout(()=>{
-                div.style.animation = (time/1000)+'s modal linear';
-                ocultar(id,0);
-            },time);
-        }
         function Pass(passo){
             let frm = document.querySelector('#Frm');
             let btn = document.querySelector('#EnvA');
@@ -92,9 +77,22 @@
                     frm.innerHTML = `
                     <div class="logoForm">Logo</div>
                     <div class="inputs">
-                        <p>
-                            Um código foi enviado em seu e-mail escreva-o abaixo para poder trocar a Senha.
-                        </p>
+                        <h3>
+                            <pre>Um</pre>
+                            <pre>código</pre>
+                            <pre>foi</pre>
+                            <pre>enviado</pre>
+                            <pre>em</pre>
+                            <pre>seu</pre>
+                            <pre>e-mail</pre>
+                            <pre>escreva-o</pre>
+                            <pre>abaixo</pre>
+                            <pre>para</pre>
+                            <pre>poder</pre>
+                            <pre>trocar</pre>
+                            <pre>a</pre>
+                            <pre>Senha.</pre>
+                        </h3>
                         <div class="input">
                             <input type="number" class="inputText" placeholder="Código De Verificação" id="CodInput" minlength="6" maxlength="6">
                             <label class="inputError" id="Error2"></label>
@@ -102,7 +100,8 @@
                     </div>
                     `;
                     btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="VerCod('+cod+')">Verificar</button>';
-                }else{
+                }
+                else{
                     modalText(['#ModalMensage','#modal'], '<b>Email</b><b>primeiro</b><b>amigo!!</b>');
                 }
             }
@@ -117,6 +116,7 @@
                 document.querySelector(errors[0]),
                 document.querySelector(errors[1])
             ];
+            //buscar dados já existentes
             let dtVer = [
                 'Bus@email.com',
                 'Peruibe1'
@@ -196,6 +196,7 @@
                         <label class="inputError" id="Error1"></label>
                     </div>
                 </div>
+                <button class="LmSenha" onclick="Pass(1)"><pre>Esqueci</pre><pre>a</pre><pre>senha</pre></button>
                 `;
                 btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="FunCad([\'#EmailInput\', \'#SenhaInput\'], [\'#Error0\',\'#Error1\'])">Entrar</button>';
             }else{

@@ -49,3 +49,19 @@ function ocultar(obj, es){
 		div.style.display = 'none';
 	};
 };
+
+function modalText(id, text){
+    ocultar(id[1], 1);
+    let modalText = document.querySelector(id[0]);
+    modalText.innerHTML = text;
+}
+
+function modalX(id, fun){
+    let time = 700;
+    let div = document.querySelector(id);
+    div.style.animation = (time/1000)+'s modalSumir linear';
+    setTimeout(()=>{
+        div.style.animation = (time/1000)+'s modal linear';
+        ocultar(id,0);
+    },time);
+}
