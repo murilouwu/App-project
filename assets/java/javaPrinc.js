@@ -1,3 +1,7 @@
+function uploadImage(file, nmUser, mailUser) {
+    //baixar img
+}
+
 function numberRadom(max, min, qt){
     let nuns = [];
     for(var i=0; i<qt; i++){
@@ -57,11 +61,17 @@ function modalText(id, text){
 }
 
 function modalX(id, fun){
-    let time = 700;
-    let div = document.querySelector(id);
-    div.style.animation = (time/1000)+'s modalSumir linear';
-    setTimeout(()=>{
-        div.style.animation = (time/1000)+'s modal linear';
-        ocultar(id,0);
-    },time);
+    if(fun==0){
+        let time = 700;
+        let div = document.querySelector(id);
+        div.style.animation = (time/1000)+'s modalSumir linear';
+        setTimeout(()=>{
+            div.style.animation = (time/1000)+'s modal linear';
+            ocultar(id,0);
+        },time);
+    }
 }
+
+function redirect(page) {
+    window.location.href = page;
+}  

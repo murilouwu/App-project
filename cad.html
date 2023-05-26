@@ -19,17 +19,11 @@
         <label class="title">Cadastar</label>
     </div>
     <div class="FormCard" id="Frm">
-        <div class="ImgPerfilInput" id="ImgMost"></div>
-        <div class="fun">
-            <label for="InputImgEnv" class="btnImage"><pre>Enviar</pre><pre>Foto</pre></label>
-            <input type="file" id="InputImgEnv" accept="image/*">
-            <p class="palaImg"> *para pular essa etapa é só clicar no "próximo passo" e a foto acima será no momento sua foto de perfil* </p>
-        </div>
-        <!--<div class="logoForm">Logo</div>
+        <div class="logoForm">Logo</div>
         <div class="inputs">
             <div class="input">
                 <i class="icon fa-solid fa-user-pen"></i>
-                <input type="text" class="inputText" placeholder="Nome Completo" id="NameInput">
+                <input type="text" class="inputText" placeholder="Nome de Usuário" id="NameInput">
             </div>
             <div class="input">
                 <i class="icon fa-solid fa-envelope"></i>
@@ -54,7 +48,7 @@
                 <input type="password" class="inputText" placeholder="Confirmar senha" id="SenhaReptInput">
                 <label class="inputError" id="Error2"></label>
             </div>
-        </div>-->
+        </div>
     </div>
     <button class="btn bt" id="EnvA" onclick="FunCad(['#NameInput', '#EmailInput', '#TelInput', '#EndInput', '#SenhaInput', '#SenhaReptInput'], ['#Error0','#Error1','#Error2'])">Cadastar</button>
     <div class="fotter ds-flexC">
@@ -114,8 +108,8 @@
                 '17_4002-8922'
             ];
             let ver = [
-                (vls[1]!=dtVer[0]? '':'Email já existente!!!'),
-                (vls[2]!=dtVer[1]? 'Modelo (XX_XXXX-XXXXX)':(length(vls[2])>13 || length(vls[2])<12 ? 'Telefone inválido':'Telefone Já Cadastrado!!!')),
+                (vls[1]!=dtVer[0]? (vls[1].indexOf('@') != -1? '':'Falta o @ no Email'):'Email já existente!!!'),
+                (vls[2] != dtVer[1] ? (vls[2].length > 13 || vls[2].length < 12 ? 'minimo de numeros é 12' : 'Modelo (XX_XXXX-XXXXX)') : 'Telefone Já Cadastrado!!!'),
                 (vls[4]==vls[5]? '':'Senhas diferentes!!!')
             ];
             
@@ -131,57 +125,79 @@
         function Pass(passo, valsSave){
             let frm = document.querySelector('#Frm');
             let btn = document.querySelector('#EnvA');
+            let arrayValues = '[';
+            for(var i = 0; i<valsSave.length; i++){
+                arrayValues += "'"+valsSave[i]+"'";
+                if(i<(valsSave.length - 1)){
+                    arrayValues += ',';
+                }
+            }
+            arrayValues += ']';
             if(passo == 0){
                 frm.innerHTML = `
-                <div class="ImgPerfilInput"></div>
-
+                <div class="ImgPerfilInput" id="ImgMost"></div>
+                <div class="fun">
+                    <label for="InputImgEnv" class="btnImage"><pre>Enviar</pre><pre>Foto</pre></label>
+                    <input type="file" id="InputImgEnv" name="PerfilImage" accept="image/*">
+                    <p class="palaImg"> *para pular essa etapa é só clicar no "próximo passo" e a foto acima será no momento sua foto de perfil* </p>
+                </div>
                 `;
-                btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="">Próximo passo</button>';
+                btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="Pass(1, '+arrayValues+')">Próximo passo</button>';
             }
             else if(passo == 1){
-                //email tem que ser valido
-                if(document.querySelector('#EmailInput').value != ''){
-                    let lp = false;
-                    let cod = 0;
-                    while(lp==false){
-                        let nuns = numberRadom(9, 0, 6);
-                        cod = Codigo(nuns.length, nuns);
-                        if(!isNaN(cod)){
-                            lp = true;
-                        }
+                //let file = $('#PerfilImage')[0].files[0];
+                let imageUrl = "'A.png'";//uploadImage(file, valsSave[0], valsSave[1]);
+                
+                let lp = false;
+                let cod = 0;
+                while(lp==false){
+                    let nuns = numberRadom(9, 0, 6);
+                    cod = Codigo(nuns.length, nuns);
+                    if(!isNaN(cod)){
+                        lp = true;
                     }
-                    //Cod para mandar email
-                    frm.innerHTML = `
-                    <div class="logoForm">Logo</div>
-                    <div class="inputs">
-                        <h3>
-                            <pre>Um</pre>
-                            <pre>código</pre>
-                            <pre>foi</pre>
-                            <pre>enviado</pre>
-                            <pre>em</pre>
-                            <pre>seu</pre>
-                            <pre>e-mail</pre>
-                            <pre>escreva-o</pre>
-                            <pre>abaixo</pre>
-                            <pre>para</pre>
-                            <pre>poder</pre>
-                            <pre>trocar</pre>
-                            <pre>a</pre>
-                            <pre>Senha.</pre>
-                        </h3>
-                        <div class="input">
-                            <input type="number" class="inputText" placeholder="Código De Verificação" id="CodInput" minlength="6" maxlength="6">
-                            <label class="inputError" id="Error2"></label>
-                        </div>
+                }
+                //Cod para mandar email
+                frm.innerHTML = `
+                <div class="logoForm">Logo</div>
+                <div class="inputs">
+                    <h3>
+                        <pre>Um</pre>
+                        <pre>código</pre>
+                        <pre>foi</pre>
+                        <pre>enviado</pre>
+                        <pre>em</pre>
+                        <pre>seu</pre>
+                        <pre>e-mail</pre>
+                        <pre>escreva-o</pre>
+                        <pre>abaixo</pre>
+                        <pre>para</pre>
+                        <pre>poder</pre>
+                        <pre>trocar</pre>
+                        <pre>a</pre>
+                        <pre>Senha.</pre>
+                    </h3>
+                    <div class="input" style="margin-top: 2vh;">
+                        <input type="number" class="inputText" placeholder="Código De Verificação" id="CodInput" minlength="6" maxlength="6">
+                        <label class="inputError" id="ErrorCodVer"></label>
                     </div>
-                    `;
-                    btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="VerCod('+cod+')">Verificar</button>';
-                }
-                else{
-                    modalText(['#ModalMensage','#modal'], '<b>Email</b><b>primeiro</b><b>amigo!!</b>');
-                }
+                </div>
+                `;
+                btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="VerCod('+cod+', '+arrayValues+', '+imageUrl+')">Verificar</button>';
             }
+        }
+        function VerCod(cod, valsSave, url){
+            let vl = document.querySelector('#CodInput').value;
+            let lbErro = document.querySelector('#ErrorCodVer');
+            let ver = vl==cod? 1:0;
+
+            if(ver==0){
+                let text = 'Codigo incorreto';
+                lbErro.innerHTML = text;
+            }else{
+                //logar user
+                redirect('home.html');
+            };
         }
     </script>
 </body>
