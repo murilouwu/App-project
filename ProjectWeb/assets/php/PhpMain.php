@@ -20,26 +20,16 @@ function HeaderEcho($Title, $assets){
 function mensage($txt){
     echo '<script>alert("'.$txt.'");</script>';
 }
-function upFileinPage($Files){
-    $dir = 'FilesSave';
-    mkdir(__DIR__.'/'.$dir.'/'.$nm.'/', 0777, true);
 
-    if($file['tmp_name'] != ''){
-        $path = $file['name'];
-        $ext = pathinfo($path, PATHINFO_EXTENSION);
-        $linkF = $dir.'/'.$nm.'/FotodePerfil.'.$ext;
-        move_uploaded_file($file['tmp_name'], $linkF);
-    
-        return($linkF);
-    }else{
-        $Local = [
-            'imgs/perfilNoImg.png',
-            $dir.'/'.$nm.'/FotodePerfil.png'
-        ];
-        copy($Local[0], $Local[1]);
-        return $Local[1];
+function upFileinPage($Files, $PastSaves){
+    for($i=0; $i<count($PastSaves); $i++){
+        $directory = dirname(__DIR__) . '/'.$PastSaves[$i];
+        if(!is_dir($directory)){
+            mkdir($directory, 0777, true);
+        }
     }
 }
+
 function footEcho(){
     $res = '
         </html>
