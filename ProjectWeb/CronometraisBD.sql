@@ -26,15 +26,8 @@ CREATE TABLE Usuario(
     NR_Telefone VARCHAR(20),
     EN_Endereco VARCHAR(100),
     AS_Assinatura INT,
+    PACK_auxiliar INT,
     IM_ImgPerfil LONGTEXT
-);
-
-CREATE TABLE Rascron(
-    CD_Rascron INT PRIMARY KEY AUTO_INCREMENT,
-    CD_Rastreamento INT,
-    NR_Serie INT,
-    NR_Modelo INT,
-    NR_Estoque INT
 );
 
 CREATE TABLE Horarios(
@@ -55,8 +48,6 @@ CREATE TABLE Onibus(
     IM_Foto LONGTEXT,
     id_Provedora INT,
     FOREIGN KEY (id_Provedora) REFERENCES Provedora(CD_Provedora),
-    id_Rascron INT,
-    FOREIGN KEY (id_Rascron) REFERENCES Rascron(CD_Rascron),
     id_Horarios INT,
     FOREIGN KEY (id_Horarios) REFERENCES Horarios(CD_Horarios)
 );
@@ -66,7 +57,7 @@ CREATE TABLE Tempos(
     AUTO_INCREMENT,
     TP_Inicial INT,
     TP_Final INT,
-    DS_Local INT,
+    DS_Local VARCHAR(200),
     id_Horarios INT,
     FOREIGN KEY (id_Horarios)REFERENCES Horarios(CD_Horarios)
 );

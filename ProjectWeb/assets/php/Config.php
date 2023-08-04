@@ -9,7 +9,7 @@ $db = array(
     'nm'=>'CRONOMETRAIS'
 );
 
-//$conn = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['nm']) or die ('Sem Conecção ao database');
+$conn = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['nm']) or die ('Sem Conecção ao database');
 
 function InsertBd($Infs, $Dts, $Vls, $Vers, $Configs, $Up){
     /*

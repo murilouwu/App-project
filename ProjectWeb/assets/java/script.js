@@ -54,3 +54,15 @@ function ocultar(obj, es){
 function redirect(page) {
     window.location.href = page;
 }
+
+function drop(btn, id, fun, textId, texts){
+	let es = fun==0? 1:0;
+	ocultar(id, es);
+	let div = document.querySelector(textId);
+	div.innerHTML = texts[0];
+	
+	let newTexts = [texts[1], texts[0]];
+	let fun2 = fun==0? 1:0;
+	let onclick = "drop(this, '"+id+"', "+fun2+", '"+textId+"',['"+newTexts[0]+"', '"+newTexts[1]+"'])";
+	btn.setAttribute("onclick", onclick);
+}
