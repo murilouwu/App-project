@@ -66,3 +66,8 @@ function drop(btn, id, fun, textId, texts){
 	let onclick = "drop(this, '"+id+"', "+fun2+", '"+textId+"',['"+newTexts[0]+"', '"+newTexts[1]+"'])";
 	btn.setAttribute("onclick", onclick);
 }
+
+function Scroll0Display(item) {
+	let fun = window.scrollY === 0 ? 0 : 1;
+	ocultar(item, fun);
+}

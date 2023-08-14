@@ -25,9 +25,15 @@
                     </div>
                     <span>Ou use seu email</span>
                     <div class="scrool">
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
+                        <input type="text" placeholder="Nome do CEO" />
+                        <input type="text" placeholder="Nome da Empresa" />
+                        <input type="email" placeholder="Email de Contato" />
+                        <input type="password" placeholder="CNPJ" />
+                        <input type="password" placeholder="Senha" />
+                        <input type="password" placeholder="Confirmar Senha" />
+                        <label for="imgLogoInput">Imagem da logo</label>
+                        <input type="file" id="imgLogoInput"/>
+
                     </div>
                     <button>Cadastrar</button>
                 </form>

@@ -11,10 +11,12 @@ CREATE TABLE ADM(
 CREATE TABLE Provedora(
     CD_Provedora INT PRIMARY KEY AUTO_INCREMENT,
     NM_Provedora VARCHAR(65),
+    NE_Email VARCHAR(100),
     CD_CNPJ VARCHAR(35),
     AS_Assinatura INT,
     IM_Logo LONGTEXT,
-    NM_CEO VARCHAR(60)
+    NM_CEO VARCHAR(60),
+    Key_senha VARCHAR(60)
 );
 
 CREATE TABLE Usuario(
@@ -23,6 +25,7 @@ CREATE TABLE Usuario(
     NM_Nome VARCHAR(60),
     Key_senha VARCHAR(60),
     NE_Email VARCHAR(100),
+    CD_RG VARCHAR(35),
     NR_Telefone VARCHAR(20),
     EN_Endereco VARCHAR(100),
     AS_Assinatura INT,

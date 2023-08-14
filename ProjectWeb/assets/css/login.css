@@ -122,7 +122,9 @@ form {
             background-color: var(--corA);
             color: var(--corD);
         }
-
+        input::-webkit-input-placeholder{
+            color: var(--corD);
+        }
 
 .container {
 	background-color: var(--corD);
