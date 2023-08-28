@@ -31,9 +31,7 @@
                         <input type="password" placeholder="CNPJ" />
                         <input type="password" placeholder="Senha" />
                         <input type="password" placeholder="Confirmar Senha" />
-                        <label for="imgLogoInput">Imagem da logo</label>
-                        <input type="file" id="imgLogoInput"/>
-
+                        <button>enviar Imagem da logo</button>
                     </div>
                     <button>Cadastrar</button>
                 </form>
@@ -80,6 +78,16 @@
         signInButton.addEventListener('click', () => {
             container.classList.remove("right-panel-active");
         });
+        <?php
+            $fun = $_GET['log'];
+            if($fun == 1){
+                echo '
+                    window.onload = ()=>{
+                        signUpButton.click();
+                    }      
+                ';
+            }
+        ?>
     </script>
 <?php 
     footEcho();

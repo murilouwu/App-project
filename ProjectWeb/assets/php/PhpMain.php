@@ -45,33 +45,6 @@ function mensage($txt){
     echo '<script>alert("'.$txt.'");</script>';
 }
 
-function upFileinPage($Files, $PastSaves) {
-    $Ret = array();
-    
-    for ($i = 0; $i < count($PastSaves); $i++) {
-        $directory = dirname(__DIR__) . '/' . $PastSaves[$i];
-        
-        if (!is_dir($directory)) {
-            mkdir($directory, 0777, true);
-        }
-        
-        $file = $Files[$i];
-        $fileName = $file['name'];
-        $fileSize = $file['size'];
-        $fileDate = date('YmdHis');
-        
-        $newFileName = $fileName . $fileSize . $fileDate;
-        $destination = $directory . '/' . $newFileName;
-        
-        move_uploaded_file($file['tmp_name'], $destination);
-        
-        $Ret[] = $destination;
-    }
-    
-    return $Ret;
-}
-
-
 
 function footEcho(){
     $res = '

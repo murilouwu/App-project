@@ -121,11 +121,11 @@
 				<div class="textBlock4 flexDisplay">
 					<div class="blockIconBlock2 cor2-Block4 flexDisplay">
 						<i class="fa-solid fa-person-walking-arrow-right"></i>
-						<button class="BtnEntrarBlock4" onclick="">Entrar</button>
+						<a class="BtnEntrarBlock4" href="login.php?log=0">Entrar</a>
 					</div>
 					<div class="blockIconBlock2 cor2-Block2 cor2-Block4 flexDisplay">
 						<i class="fa-solid fa-user-plus"></i>
-						<button class="BtnEntrarBlock4 cssBlock4" onclick="">Se Cadastrar</button>
+						<a class="BtnEntrarBlock4 cssBlock4" href="login.php?log=1">Se Cadastrar</a>
 					</div>
 				</div>
 			</div>

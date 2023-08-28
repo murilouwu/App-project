@@ -2,8 +2,7 @@ create database CRONOMETRAIS;
 Use CRONOMETRAIS;
 
 CREATE TABLE ADM(
-    CD_ADM INT PRIMARY KEY
-    AUTO_INCREMENT,
+    CD_ADM INT PRIMARY KEY AUTO_INCREMENT,
     Key_senha VARCHAR(45),
     NE_Email VARCHAR(45)
 );
@@ -20,8 +19,7 @@ CREATE TABLE Provedora(
 );
 
 CREATE TABLE Usuario(
-    cd_Usuario INT PRIMARY KEY
-    AUTO_INCREMENT,
+    cd_Usuario INT PRIMARY KEY AUTO_INCREMENT,
     NM_Nome VARCHAR(60),
     Key_senha VARCHAR(60),
     NE_Email VARCHAR(100),
@@ -39,8 +37,7 @@ CREATE TABLE Horarios(
 
 
 CREATE TABLE Onibus(
-    CD_Onibus INT PRIMARY KEY
-    AUTO_INCREMENT,
+    CD_Onibus INT PRIMARY KEY AUTO_INCREMENT,
     CD_Placa VARCHAR(7),
     RT_Rota LONGTEXT,
     DS_Descricao VARCHAR(200),
@@ -56,8 +53,7 @@ CREATE TABLE Onibus(
 );
 
 CREATE TABLE Tempos(
-    CD_Tempos INT PRIMARY KEY
-    AUTO_INCREMENT,
+    CD_Tempos INT PRIMARY KEY AUTO_INCREMENT,
     TP_Inicial INT,
     TP_Final INT,
     DS_Local VARCHAR(200),
@@ -66,8 +62,7 @@ CREATE TABLE Tempos(
 );
 
 CREATE TABLE Avaliacao(
-    CD_Avaliacao INT PRIMARY KEY
-    AUTO_INCREMENT,
+    CD_Avaliacao INT PRIMARY KEY AUTO_INCREMENT,
     DS_Comentario LONGTEXT,
     NT_Nota INT,
     id_Usuario INT,

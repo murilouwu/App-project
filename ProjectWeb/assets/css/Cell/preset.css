@@ -1,0 +1,14 @@
+@media screen and (max-width: 600px){
+    .irTop {
+        position: fixed;
+        z-index: 3;
+        width: 18vh;
+        height: 18vh;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 78vh 0vw 0vh 60vw;
+        background-color: var(--none);
+        border: none;
+    } 
+}
