@@ -18,6 +18,20 @@
         <div class="container" id="container">
             <div class="form-container sign-up-container">
                 <form>
+                    <h1>Entrar</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+                        <a href="#" class="social"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <span>Ou use seu email</span>
+                    <input type="email" placeholder="Email ou Número de telefone" />
+                    <input type="password" placeholder="Password" />
+                    <a href="#">esqueceu a senha?</a>
+                    <button>Entrar</button>
+                </form>
+            </div>
+            <div class="form-container sign-up-container">
+                <form>
                     <h1>Crie sua Conta</h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
@@ -31,25 +45,12 @@
                         <input type="password" placeholder="CNPJ" />
                         <input type="password" placeholder="Senha" />
                         <input type="password" placeholder="Confirmar Senha" />
-                        <button>enviar Imagem da logo</button>
+                        <button class="btnFile"><i class="fa-solid fa-angles-up"></i><i class="fa-solid fa-image"></i> enviar logo</button>
                     </div>
                     <button>Cadastrar</button>
                 </form>
             </div>
-            <div class="form-container sign-in-container">
-                <form>
-                    <h1>Entrar</h1>
-                    <div class="social-container">
-                        <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
-                        <a href="#" class="social"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                    <span>Ou use seu email</span>
-                    <input type="email" placeholder="Email ou Número de telefone" />
-                    <input type="password" placeholder="Password" />
-                    <a href="#">esqueceu a senha?</a>
-                    <button>Entrar</button>
-                </form>
-            </div>
+
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
@@ -70,13 +71,31 @@
         const signUpButton = document.getElementById('signUp');
         const signInButton = document.getElementById('signIn');
         const container = document.getElementById('container');
+        const Overs = [
+            document.querySelector('.overlay-container'), 
+            document.querySelector('.overlay')
+        ];
 
         signUpButton.addEventListener('click', () => {
-            container.classList.add("right-panel-active");
+            Overs[0].style.animation = 'scroll 0.5s linear';
+            Overs[1].style.animation = 'scrollA 0.5s linear';
+            
+            setTimeout(() => {
+                container.setAttribute('class', 'container right-panel-active');
+                Overs[0].style.animation = '';
+                Overs[1].style.animation = '';
+            }, 500);
         });
 
         signInButton.addEventListener('click', () => {
-            container.classList.remove("right-panel-active");
+            Overs[0].style.animation = 'scroll 0.5s linear reverse';
+            Overs[1].style.animation = 'scrollA 0.5s linear reverse';
+            
+            setTimeout(() => {
+                container.setAttribute('class', 'container');
+                Overs[0].style.animation = '';
+                Overs[1].style.animation = '';
+            }, 500);
         });
         <?php
             $fun = $_GET['log'];
