@@ -8,8 +8,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         margin: 78vh 0vw 0vh 60vw;
-        background-color: var(--Invisible);
+        background-color: var(--none);
         border: none;
-        filter: drop-shadow(1vw 1vh 0vw var(--corC));
     } 
 }
