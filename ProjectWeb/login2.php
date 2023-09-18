@@ -6,7 +6,7 @@
         [
             [0, 'http-equiv="X-UA-Compatible" content="IE=edge"'],
             [0, 'name="viewport" content="width=device-width, initial-scale=1.0"'],
-            [1, 'assets/css/login.css'],
+            [1, 'assets/css/login2.css'],
             [2, 'assets/java/script.js'],
             [2, 'https://kit.fontawesome.com/39cab4bf95.js', 'crossorigin="anonymous"'],
             [2, 'https://code.jquery.com/jquery-3.2.1.slim.js', 'integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=" crossorigin="anonymous"'],
@@ -36,7 +36,7 @@
                     <button>Cadastrar</button>
                 </form>
             </div>
-            <div class="form-container sign-in-container">
+            <div class="form-container sign-up-container">
                 <form>
                     <h1>Entrar</h1>
                     <div class="social-container">
@@ -50,45 +50,8 @@
                     <button>Entrar</button>
                 </form>
             </div>
-            <div class="overlay-container">
-                <div class="overlay">
-                    <div class="overlay-panel overlay-left">
-                        <h1>Bem Vindo, de volta!</h1>
-                        <p>Entre, e use o nosso total</p>
-                        <button class="ghost" id="signIn">Entre</button>
-                    </div>
-                    <div class="overlay-panel overlay-right">
-                        <h1>Olá, Interresado!</h1>
-                        <p>Seja bem vindo, a nossa plataforma</p>
-                        <button class="ghost" id="signUp">Cadastra-se</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </body>
-    <script>
-        const signUpButton = document.getElementById('signUp');
-        const signInButton = document.getElementById('signIn');
-        const container = document.getElementById('container');
-
-        signUpButton.addEventListener('click', () => {
-            container.classList.add("right-panel-active");
-        });
-
-        signInButton.addEventListener('click', () => {
-            container.classList.remove("right-panel-active");
-        });
-        <?php
-            $fun = $_GET['log'];
-            if($fun == 1){
-                echo '
-                    window.onload = ()=>{
-                        signUpButton.click();
-                    }      
-                ';
-            }
-        ?>
-    </script>
 <?php 
     footEcho();
 ?>
