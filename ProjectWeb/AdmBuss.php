@@ -14,6 +14,9 @@
         'assets/imgs/Logo.png'
     );
 ?>
+<body>
+        
+</body>
 <?php 
     footEcho();
 ?>

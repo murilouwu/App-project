@@ -146,8 +146,8 @@
 					    <label class="lbBlock5">Rafael R. - Programador</label>
                     </div>
                     <div class="membersUser">
-                        <img src="https://avatars.githubusercontent.com/u/91744500?v=4" class="perfilBlock5">
-					    <label class="lbBlock5">Laryssa N.- Não sei</label>
+                        <img src="https://avatars.githubusercontent.com/u/91742929?v=4" class="perfilBlock5">
+					    <label class="lbBlock5">Laryssa P.- Não sei</label>
                     </div>
                     <div class="membersUser">
                         <img src="https://avatars.githubusercontent.com/u/91744500?v=4" class="perfilBlock5">
@@ -158,7 +158,7 @@
 					    <label class="lbBlock5">Ana Beatriz S. - Não sei</label>
                     </div>
                     <div class="membersUser">
-                        <img src="https://avatars.githubusercontent.com/u/91744500?v=4" class="perfilBlock5">
+                        <img src="https://avatars.githubusercontent.com/u/92801590?v=4" class="perfilBlock5">
 					    <label class="lbBlock5">Yasmin C. - Não sei</label>
                     </div>
 				</div>
