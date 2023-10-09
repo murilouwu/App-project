@@ -1,7 +1,7 @@
 <?php
-    session_start();
-	include('assets/php/Config.php');
-	HeaderEcho(
+	include('assets/php/PhpMain.php');
+	$html = new HtmlBased();
+    $html->HeaderEcho(
         'Home', 
         [
             [0, 'http-equiv="X-UA-Compatible" content="IE=edge"'],
@@ -192,5 +192,5 @@
 		</script>
     </body>
 <?php 
-    footEcho();
+    $html->foot();
 ?>

@@ -161,7 +161,7 @@
                 .social-container {
                     margin: 2vh 0;
                 }
-                    .social-container a {
+                    .social-container .logRed{
                         border-bottom: 4px solid var(--corB);
                         display: inline-flex;
                         justify-content: center;
@@ -172,11 +172,10 @@
                         color: var(--corB);
                         font-size: 4vh;
                     }
-                        .social-container a:hover{
+                        .social-container .logRed:hover{
                             border: 3px solid var(--corB);
                             background-color: var(--corC);
                             cursor: pointer;
-                            text-decoration: none;
                         }
         .overlay-container {
             position: absolute;

@@ -1,13 +1,13 @@
-create database CRONOMETRAIS;
-Use CRONOMETRAIS;
+CREATE DATABASE cronometrais;
+USE cronometrais;
 
-CREATE TABLE ADM(
+CREATE TABLE adm(
     CD_ADM INT PRIMARY KEY AUTO_INCREMENT,
     Key_senha VARCHAR(45),
     NE_Email VARCHAR(45)
 );
 
-CREATE TABLE Provedora(
+CREATE TABLE provedora(
     CD_Provedora INT PRIMARY KEY AUTO_INCREMENT,
     NM_Provedora VARCHAR(65),
     NE_Email VARCHAR(100),
@@ -18,7 +18,7 @@ CREATE TABLE Provedora(
     Key_senha VARCHAR(60)
 );
 
-CREATE TABLE Usuario(
+CREATE TABLE usuario(
     cd_Usuario INT PRIMARY KEY AUTO_INCREMENT,
     NM_Nome VARCHAR(60),
     Key_senha VARCHAR(60),
@@ -31,12 +31,12 @@ CREATE TABLE Usuario(
     IM_ImgPerfil LONGTEXT
 );
 
-CREATE TABLE Horarios(
+CREATE TABLE horarios(
     CD_Horarios INT PRIMARY KEY AUTO_INCREMENT
 );
 
 
-CREATE TABLE Onibus(
+CREATE TABLE onibus(
     CD_Onibus INT PRIMARY KEY AUTO_INCREMENT,
     CD_Placa VARCHAR(7),
     RT_Rota LONGTEXT,
@@ -52,7 +52,7 @@ CREATE TABLE Onibus(
     FOREIGN KEY (id_Horarios) REFERENCES Horarios(CD_Horarios)
 );
 
-CREATE TABLE Tempos(
+CREATE TABLE tempos(
     CD_Tempos INT PRIMARY KEY AUTO_INCREMENT,
     TP_Inicial INT,
     TP_Final INT,
@@ -61,7 +61,7 @@ CREATE TABLE Tempos(
     FOREIGN KEY (id_Horarios)REFERENCES Horarios(CD_Horarios)
 );
 
-CREATE TABLE Avaliacao(
+CREATE TABLE avaliacao(
     CD_Avaliacao INT PRIMARY KEY AUTO_INCREMENT,
     DS_Comentario LONGTEXT,
     NT_Nota INT,

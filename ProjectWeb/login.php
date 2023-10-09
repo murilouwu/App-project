@@ -1,7 +1,7 @@
 <?php
-    session_start();
-	include('assets/php/Config.php');
-	HeaderEcho(
+	include('assets/php/PhpMain.php');
+	$html = new HtmlBased();
+    $html->HeaderEcho(
         'Entrar', 
         [
             [0, 'http-equiv="X-UA-Compatible" content="IE=edge"'],
@@ -20,10 +20,9 @@
                 <form>
                     <h1>Entrar</h1>
                     <div class="social-container">
-                        <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
-                        <a href="#" class="social"><i class="fa-brands fa-github"></i></a>
+                        <div class="logRed" class="social"><i class="fa-brands fa-google"></i></div>
+                        <div class="logRed" class="social"><i class="fa-brands fa-github"></i></div>
                     </div>
-                    <span>Ou use seu email</span>
                     <input type="email" placeholder="Email ou Número de telefone" />
                     <input type="password" placeholder="Password" />
                     <a href="#">esqueceu a senha?</a>
@@ -34,10 +33,9 @@
                 <form>
                     <h1>Crie sua Conta</h1>
                     <div class="social-container">
-                        <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
-                        <a href="#" class="social"><i class="fa-brands fa-github"></i></a>
+                        <div class="logRed" class="social"><i class="fa-brands fa-google"></i></div>
+                        <div class="logRed" class="social"><i class="fa-brands fa-github"></i></div>
                     </div>
-                    <span>Ou use seu email</span>
                     <div class="scrool">
                         <input type="text" placeholder="Nome do CEO" />
                         <input type="text" placeholder="Nome da Empresa" />
@@ -108,5 +106,5 @@
         ?>
     </script>
 <?php 
-    footEcho();
+    $html->foot();
 ?>
