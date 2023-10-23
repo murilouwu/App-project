@@ -22,10 +22,12 @@
 			align-items: center;
 		}
 			.FastAcess{
+				display: none;
 				width: 68vw;
 				flex-direction: row;
 				justify-content: space-around;
 				align-items: center;
+				animation: slown 2s linear;
 			}
 				.FastAcess .topicOne{
 					width: 13vw;
@@ -408,4 +410,12 @@
 						font-weight: bold;
 						font-family: monospace;
 					}
+	@keyframes slown{
+		0%{
+			margin-right: 100vw;
+		}
+		100%{
+			margin-right: 0vw;
+		}
+	}
 }

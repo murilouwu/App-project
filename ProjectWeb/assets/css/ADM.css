@@ -1,1 +1,112 @@
 @import 'preset.css';
+
+.TopBoard{
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--corC);
+}
+    .TopBoard .logo{
+        width: 2vw;
+        height: 2vw;
+        margin-right: 0.5vw;
+    }
+    .TopBoard .Title{
+        font-size: 2vh;
+        font-style: italic;
+        font-family: 'FontBas';
+        letter-spacing: 0.3vw;
+        color: var(--corD);
+    }
+.leftBoard{
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+    height: 95vh;
+    width: 16vw;
+    background-color: var(--corC);
+}
+    .leftBoard .perfil{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+        .perfil .perflImg{
+            width: 3vw;
+            height: 3vw;
+            background-color: red;
+            margin-right: 0.5vw;
+            border-radius: 2vw;
+            margin-left: 2vw;
+        }
+        .perfil .nameUser{
+            color: var(--corB);
+            font-size: 2vh;
+            font-style: oblique;
+            font-weight: bold;
+            font-family: cursive;
+        }
+    .leftBoard .boardDiv{
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        border-color: var(--corB);
+        width: 13vw;
+        align-self: center;
+    }
+    .leftBoard .btnList{
+        margin-left: 2vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+        .btnList .btnUl{
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            display: flex;
+            margin-bottom: 2vh;
+            color: var(--corD);
+            justify-content: flex-start;
+        }
+            .btnList .sair{
+                color: var(--corA);
+                margin-top: 28vh;
+                margin-bottom: 0vh;
+            }
+            .btnUl .btn{
+                border: none;
+                width: 60%;
+                padding: 1vh;
+                color: var(--corD);
+                background-color: var(--Invisible);
+                border-radius: 0.1vw;
+                font-size: 1.5vh;
+                font-family: monospace;
+                font-weight: bold;
+                text-align: left;
+                margin-left: 1vw;
+            }
+                .btnUl .btn:hover{
+                    border-bottom: 1px solid;
+                    cursor: pointer;
+                }
+            .btnUl hr{
+                width: 60%;
+                border-color: var(--corA);
+                margin-left: 2vw;
+            }
+            .sair .btn{
+                color: var(--corA);
+            }
+.iframe{
+    position: absolute;
+    width: 80vw;
+    margin: 7vh 2vw 0vh 0vw;
+    align-self: end;
+    height: 89vh;
+}

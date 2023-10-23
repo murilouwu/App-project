@@ -20,13 +20,13 @@
 		<div class="Block-top flexDisplay">
 			<div class="certerTop flexDisplay">
 				<div class="logoTop"></div>
-				<div class="FastAcess flexDisplay">
+				<div class="FastAcess">
 					<button class="topicOne bntScroll">O que é este Site</button>
 					<button class="topicOne bntScroll">Diferencial</button>
 					<button class="topicOne bntScroll">Entrar</button>
 					<button class="topicOne bntScroll">Desenvolvedores</button>
 				</div>
-				<button class="MenuBar" onclick=""><i class="fa-solid fa-bars"></i></button>
+				<button class="MenuBar" onclick="menuTolls(this, 1, '.FastAcess')"><i class="fa-solid fa-bars"></i></button>
 			</div>
 		</div>
 		<!--"sumário"-->
@@ -189,6 +189,17 @@
 			        window.scrollTo({ top: scrollDistance, behavior: 'smooth' });
 			    });
 			});
+
+			function menuTolls(btn, fun, div){
+				ocultar(div, fun);
+
+				let invertFun = fun==0? 1:0;
+				let res = "menuTolls(this, "+invertFun+", '"+div+"')";
+				btn.setAttribute('onclick', res);
+				
+				let icon = ['<i class="fa-solid fa-bars"></i>', '<i class="fa-solid fa-circle-xmark"></i>'];				
+				btn.innerHTML = icon[fun];
+			}
 		</script>
     </body>
 <?php 

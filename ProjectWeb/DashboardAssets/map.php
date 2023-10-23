@@ -2,7 +2,7 @@
     include('../assets/php/PhpMain.php');
     $html = new HtmlBased();
     $html->HeaderEcho(
-        'buss', 
+        'Mapa', 
         [
             [0, 'http-equiv="X-UA-Compatible" content="IE=edge"'],
             [0, 'name="viewport" content="width=device-width, initial-scale=1.0"'],
@@ -16,7 +16,7 @@
 ?>
 
 <?php
-    $name = "<h4>Veiculos</h4>";
+    $name = "<h4>Mapa</h4>";
     echo $name;
 ?>
 
