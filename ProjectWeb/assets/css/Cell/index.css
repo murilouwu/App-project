@@ -22,9 +22,21 @@
 		}
 			.FastAcess{
 				display: none;
+				height: 100vh;
+				position: absolute;
+				background-color: var(--corB);
+				width: 90vw;
+				flex-direction: column;
+				align-items: flex-end;
+				justify-content: center;
+				margin-top: 90vh;
+				margin-left: 5vw;
 			}
 				.FastAcess .topicOne{
-					display: none;
+					display: flex;
+					width: 80vw;
+					justify-content: center;
+					margin-top: 9vh;
 				}
 			.logoTop{
 				height: 8vh;
@@ -39,6 +51,7 @@
 				border: none;
 				color: var(--corD);
 				font-size: 4vh;
+				z-index: 1;
 			}
 	.Block-One{
 		height: 144vh;

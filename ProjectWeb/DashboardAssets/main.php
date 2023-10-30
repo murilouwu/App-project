@@ -14,12 +14,9 @@
         '../assets/imgs/Logo.png'
     );
 ?>
-
-<?php
-    $name = '<h1 class="Title">CRONOMETRAIS</h1>';
-    echo $name;
-?>
-
+    <body>
+        
+    </body>
 <?php 
     $html->foot();
 ?>

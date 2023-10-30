@@ -38,7 +38,9 @@
 					<button class="topicOne bntScroll">Entrar</button>
 					<button class="topicOne bntScroll">Desenvolvedores</button>
 				</div>
-				<div class="text2One flexDisplay"></div>
+				<div class="text2One flexDisplay">
+					<button class="btnLinkApp">Baixe o App <i class="fa-solid fa-circle-arrow-right"></i></button>
+				</div>
 			</div>
 			<div class="shortBlockOne flexDisplay">
 				<div class="cardTextOne flexDisplay">
@@ -139,27 +141,27 @@
 				<div class="developerBlock5 flexDisplay">
                     <div class="membersUser">
                         <img src="https://avatars.githubusercontent.com/u/91744500?v=4" class="perfilBlock5">
-					    <label class="lbBlock5">Murilo G. - Programador</label>
+					    <label class="lbBlock5">Murilo G. - Developers</label>
                     </div>
                     <div class="membersUser">
                         <img src="https://avatars.githubusercontent.com/u/92901966?v=4" class="perfilBlock5">
-					    <label class="lbBlock5">Rafael R. - Programador</label>
+					    <label class="lbBlock5">Rafael R. - Developers</label>
                     </div>
                     <div class="membersUser">
                         <img src="https://avatars.githubusercontent.com/u/91742929?v=4" class="perfilBlock5">
-					    <label class="lbBlock5">Laryssa P.- Não sei</label>
+					    <label class="lbBlock5">Laryssa P.- Scrum Master</label>
                     </div>
                     <div class="membersUser">
-                        <img src="https://avatars.githubusercontent.com/u/91744500?v=4" class="perfilBlock5">
-					    <label class="lbBlock5">Emanuelle G. - Não sei</label>
+                        <img src="https://avatars.githubusercontent.com/u/92957326?v=4" class="perfilBlock5">
+					    <label class="lbBlock5">Emanuelle G. - Product Owner</label>
                     </div>
                     <div class="membersUser">
-                        <img src="https://avatars.githubusercontent.com/u/91744500?v=4" class="perfilBlock5">
-					    <label class="lbBlock5">Ana Beatriz S. - Não sei</label>
+                        <img src="https://avatars.githubusercontent.com/u/106540506?v=4" class="perfilBlock5">
+					    <label class="lbBlock5">Ana Beatriz S. - Scrum Master</label>
                     </div>
                     <div class="membersUser">
                         <img src="https://avatars.githubusercontent.com/u/92801590?v=4" class="perfilBlock5">
-					    <label class="lbBlock5">Yasmin C. - Não sei</label>
+					    <label class="lbBlock5">Yasmin C. - Scrum Master</label>
                     </div>
 				</div>
 			</div>
