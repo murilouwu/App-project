@@ -47,15 +47,15 @@
 				</div>
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-users"></i>
-                    <p class="palagrafyOne">aaaaa</p>
+                    			<p class="palagrafyOne">aaaaa</p>
 				</div>
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-user-pen"></i>
-                    <p class="palagrafyOne">aaaaa</p>
+                    			<p class="palagrafyOne">aaaaa</p>
 				</div>
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-sack-xmark"></i>
-                    <p class="palagrafyOne">aaaaa</p>
+                    			<p class="palagrafyOne">aaaaa</p>
 				</div>
 			</div>
 		</div>
