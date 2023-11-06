@@ -26,7 +26,7 @@
         </div>
         <hr class="boardDiv">
         <div class="btnList">
-            <div class="btnUl"><i class="fa-solid fa-bus"></i><button class="btn" onclick="iframeAlter(0, '.iframe')">Veiculos</button></div>
+            <div class="btnUl"><i class="fa-solid fa-bus"></i><button class="btn" onclick="iframeAlter(0, '.iframe')">Veículos</button></div>
             <div class="btnUl"><i class="fa-solid fa-map"></i><button class="btn" onclick="iframeAlter(1, '.iframe')">Mapa</button></div>
             <div class="btnUl"><i class="fa-solid fa-sack-dollar"></i><button class="btn" onclick="iframeAlter(2, '.iframe')">Financeiro</button></div>
             <div class="btnUl"><i class="fa-solid fa-eye"></i><button class="btn" onclick="iframeAlter(3, '.iframe')">Visualização</button></div>
