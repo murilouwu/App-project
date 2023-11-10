@@ -24,7 +24,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-y: overlay;
+            overflow-y: hidden;
             background-color: var(--corD);
         }
             .HeaderMainPage{
@@ -152,21 +152,110 @@
                             width: 34vw;
                             filter: drop-shadow(-13px -7px 0px rgba(0 0 0/ 36%));
                         } 
-.FotterMainPage{
-    color: var(--corA);
-}
-.BtnsFotterMainPage{
-    color: var(--corA);
-}
-.UlBtnFotterMainPage{
-    color: var(--corA);
-}
-.btnFotterMainPage{
-    color: var(--corA);
-}
-.UlBtnFotterMainPage h3{
-    color: var(--corA);
-}
+            .FotterMainPage{
+                background-color: var(--corA);
+                width: 100vw;
+                height: auto;
+                margin-top: 9vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 8vh;
+            }
+                .balsFotterMainPage{
+                    width: 100vw;
+                    height: auto;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: var(--corA);
+                }
+                    .ballFotterMainPage{
+                        width: 50vw;
+                        height: 5vw;
+                    }
+                        .ballFotterMainPage:nth-child(1){
+                            background-color: var(--corD);
+                            clip-path: ellipse(50% 100% at 50% 0%);
+                        }
+                        .ballFotterMainPage:nth-child(2){
+                            background-color: var(--corA);
+                            clip-path: none;
+                            margin-top: -80vh;
+                            animation: ballEdit 0.75s linear;
+                            width: 27vw;
+                            z-index: 2;
+                            margin-right: 19vh;
+                            height: 42vh;
+                            border-radius: 0.5vw;
+                        }
+                            .blockMensageMainPage{
+                                display: none;
+                            }
+                                .imgRepresentMainPage{
+                                    width: 10vw;
+                                    height: 10vw;
+                                }
+                                .mensMainPage{
+                                    word-break: break;
+                                }
+                .BtnsFotterMainPage{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+                    .UlBtnFotterMainPage{
+                        color: var(--corD);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 3vh;
+                        font-family: monospace;
+                        font-weight: bold;
+                        margin-right: 5vw;
+                    }
+                        .btnFotterMainPage{
+                            color: var(--corD);
+                            width: 4vw;
+                            height: 4vw;
+                            background-color: var(--corB);
+                            border: none;
+                            border-radius: 1vw;
+                            font-size: 4vh;
+                        }
+                        .UlBtnFotterMainPage h3{
+                            margin-left: 1vw;
+                        }
+        @keyframes ballEdit{
+            0%{
+                clip-path: ellipse(50% 100% at 50% 103%);
+                margin-top: -19vh;
+                margin-right: 0vh;
+                width: 50vw;
+                height: 10vh;
+                border-radius: 0;
+                
+            }
+            50%{
+                clip-path: ellipse(50% 170% at 50% 67%);
+                margin-top: -40vh;
+                margin-right: 9vh;
+                width: 42vw;
+                height: 25vh;
+                border-radius: 0.25vw;
+            }
+            100%{
+                    clip-path: none;
+                    margin-top: -80vh;
+                    width: 27vw;
+                    margin-right: 19vh;
+                    height: 42vh;
+                    border-radius: 0.5vw;
+            }
+        }
     </style>
     <body>
         <div class="blockMainPage">
@@ -211,6 +300,15 @@
                 </div>
             </div>
             <div class="FotterMainPage">
+                <div class="balsFotterMainPage">
+                    <div class="ballFotterMainPage"></div>
+                    <div class="ballFotterMainPage" id="">
+                        <div class="blockMensageMainPage" id="">
+                            <img src="../assets/imgs/Logo.png" class="imgRepresentMainPage">
+                            <p class="mensMainPage"></p>
+                        </div>
+                    </div>
+                </div>
                 <div class="BtnsFotterMainPage">
                     <div class="UlBtnFotterMainPage">
                         <button class="btnFotterMainPage"><i class="fa-solid fa-user"></i></button>
@@ -224,6 +322,8 @@
             </div>
         </div>
     </body>
+    <script>
+    </script>
 <?php 
     $html->foot();
 ?>

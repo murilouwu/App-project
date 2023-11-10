@@ -13,6 +13,10 @@
         ],
         'assets/imgs/Logo.png'
     );
+    $Log = $_GET['log'];
+    if(!isset($Log)){
+        $html->Atalho('index.php');
+    }
 ?>
     <body>
         <div class="container" id="container">
@@ -43,7 +47,8 @@
                         <input type="password" placeholder="CNPJ" />
                         <input type="password" placeholder="Senha" />
                         <input type="password" placeholder="Confirmar Senha" />
-                        <button class="btnFile"><i class="fa-solid fa-angles-up"></i><i class="fa-solid fa-image"></i> enviar logo</button>
+                        <input type="file" id="fotoLogoCad">
+                        <label class="btnFile" for="fotoLogoCad"><i class="fa-solid fa-angles-up"></i><i class="fa-solid fa-image"></i> enviar logo</label></button>
                     </div>
                     <button>Cadastrar</button>
                 </form>

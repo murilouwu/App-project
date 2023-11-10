@@ -45,19 +45,19 @@
 			<div class="shortBlockOne flexDisplay">
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-book-open"></i>
-					<p class="palagrafyOne">aaaaa</p>
+					<p class="palagrafyOne">Melhor a acessibilidade em transportes públicos, uma maior agilidade na procura de rotas rodoviarias, pontos de embarque e desembarque, visualização em tempo real dos veículos.</p>
 				</div>
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-users"></i>
-                    			<p class="palagrafyOne">aaaaa</p>
+                    <p class="palagrafyOne">Transportes públicos com maior acessibilidade aos PCDs. Carteira Digital para PCDs, proporcionando aos passageiros uma locomoçao mais segura.</p>
 				</div>
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-user-pen"></i>
-                    			<p class="palagrafyOne">aaaaa</p>
+                    <p class="palagrafyOne">Cadastro específico para contratação ou negociação de empresas interessadas em nossos serviços.</p>
 				</div>
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-sack-xmark"></i>
-                    			<p class="palagrafyOne">aaaaa</p>
+                    <p class="palagrafyOne">Seja Usuário Premium e tenha por exemplo: encaminhação de localização em tempo real, ou análise de trajeto do veículo sincronicamente. Entre outras funções.</p>
 				</div>
 			</div>
 		</div>
@@ -65,7 +65,7 @@
 			<div class="meioBlock2 flexDisplay">
 				<div class="textBlock2 flexDisplay">
 					<h2>O que é este Site?</h2>
-					<p>Nosso site é ...</p>
+					<p>O site do Cronometrais tem o objetivo de fornecer as empresas interessadas, em facilitar o uso de seus clientes por meio da nossa aplicação.</p>
 				</div>
 				<img src="assets/imgs/luca.png" class="imgReprBlock2">
 			</div>
@@ -87,27 +87,19 @@
 			<div class="cardMost-tre flexDisplay">
 			  <div class="cardTre flexDisplay">
 			    <i class="fa-solid fa-star"></i>
-			    <p class="cardTextTre flexDisplay"><label>Diferenciais</label>...</p>
+			    <p class="cardTextTre flexDisplay"><label>Carteira Digital Para PCDs</label>Opção de criar uma carteira de identificação, substituindo o cordão de identificação para deficiências ocultas e autismo.</p>
 			  </div>
 			  <div class="cardTre flexDisplay">
 			    <i class="fa-solid fa-cube"></i>
-			    <p class="cardTextTre flexDisplay"><label>Item A</label>...</p>
+			    <p class="cardTextTre flexDisplay"><label>Compartilhamento de rota</label>Encaminhamento por meio de um código da rota para compartilhar por exemplo via Whatsapp.</p>
 			  </div>
 			  <div class="cardTre flexDisplay">
 			    <i class="fa-solid fa-address-book"></i>
-			    <p class="cardTextTre flexDisplay"><label>Item B</label>...</p>
-			  </div>
-			  <div class="cardTre flexDisplay">
-			    <i class="fa-solid fa-people-robbery"></i>
-			    <p class="cardTextTre flexDisplay"><label>Item C</label>...</p>
-			  </div>
-			  <div class="cardTre flexDisplay">
-			    <i class="fa-solid fa-ranking-star"></i>
-			    <p class="cardTextTre flexDisplay"><label>Item D</label>...</p>
+			    <p class="cardTextTre flexDisplay"><label>Transparidade</label>o sistema é transparente as empresas associadas, facilitando sua administração.</p>
 			  </div>
 			  <div class="cardTre flexDisplay">
 			    <i class="fa-solid fa-heart"></i>
-			    <p class="cardTextTre flexDisplay"><label>Bem-vindo</label>bussy</p>
+			    <p class="cardTextTre flexDisplay"><label>Bem-vindo</label>Agora que sabe sobre nós, aproveite sua experiência No sistema CRONOMETRAIS.</p>
 			  </div>
 			</div>
 		</div>
@@ -115,7 +107,7 @@
 			<div class="meioBlock2 flexDisplay">
 				<div class="textBlock2 flexDisplay">
 					<h2>Entre e Participe!</h2>
-					<p>Faça sua conta e administre os onibus da sua empresa por aqui</p>
+					<p>Faça sua conta e administre os ônibus e Vans da sua empresa por aqui</p>
 				</div>
 				<img src="assets/imgs/joia.png" class="imgReprBlock2">
 			</div>

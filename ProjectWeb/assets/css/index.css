@@ -324,7 +324,7 @@
 					word-wrap: break-word;
 					font-size: 2vh;
 					font-family: monospace;
-					color: var(--corC);
+					color: var(--corD);
 					font-style: italic;
 					flex-direction: column;
 				}
