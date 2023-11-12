@@ -55,6 +55,10 @@ function redirect(page) {
     window.location.href = page;
 }
 
+function redirectNewPage(link){
+    window.open(link, '_blank');
+}
+
 function drop(btn, id, fun, textId, texts){
 	let es = fun==0? 1:0;
 	ocultar(id, es);

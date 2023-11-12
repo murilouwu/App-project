@@ -58,16 +58,37 @@
         function Atalho($pag) {
             header("Location: $pag");
             exit();
-        }              
+        }
+
+        function Cripto($Pala){
+            return password_hash($Pala, PASSWORD_BCRYPT);
+        }   
+        
+        function CriptoVer($Pass, $Hash){
+            return password_verify($Pass, $Hash);
+        }
+
+        function upload($file, $pastSave, $NewName){
+            if ($file['error'] === 0) {
+                $nome_arquivo = $pastSave . $NewName;
+
+                if (move_uploaded_file($file['tmp_name'], $nome_arquivo)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return 'Erro no upload: ' . $file['error'];
+            }
+        }
     }
 
-	final class BankUse
+    final class BankUse
     {
         public $NameTable;
         public $Dates;
 
-        function InsertUser($pdo, $Vls, $Vers, $Configs)
-        {
+        function InsertUser($pdo, $Vls, $Vers, $Configs){
             $VersToText = '';
             foreach ($Vers as $key => $ver) {
                 if ($key === 0) {
@@ -107,7 +128,7 @@
                         $stmt->bindParam($dateParam, $Vls[$key]);
                     }
                     if ($stmt->execute()) {
-                        return 'cadastrado com sucesso :)';
+                        return 'sucesso';
                     } else {
                         throw new Exception('Erro ao cadastrar ;-;');
                     }
@@ -122,7 +143,7 @@
                 $DateRequire = "*";
             }
             try{
-                $sql = "SELECT ".$DateRequire." FROM ".$this->NameTable." WHERE ".$Where.";";
+                $sql = "SELECT ".$DateRequire." FROM ".$this->NameTable." ".$Where;
                 $stmt = $pdo->prepare($sql);
                 if($stmt->execute()){
                     if($stmt->rowCount() > 0){
@@ -135,6 +156,32 @@
                 }
             } catch(PDOException $e){
                 return 'Error: '.$e->getMessage();
+            }
+        }
+
+        function UpdateUser($pdo, $UpdateData, $Values, $Where){
+            $Updates = '';
+            foreach ($UpdateData as $key => $column) {
+                if ($key === 0) {
+                    $Updates .= $column . ' = :' . $column;
+                } else {
+                    $Updates .= ', ' . $column . ' = :' . $column;
+                }
+            }
+
+            $sql = "UPDATE " . $this->NameTable . " SET " . $Updates . " WHERE " . $Where;
+            $stmt = $pdo->prepare($sql);
+
+            foreach ($UpdateData as $column) {
+                $param = ':' . $column;
+                $value = $Values[$column];
+                $stmt->bindParam($param, $value);
+            }
+
+            if ($stmt->execute()) {
+                return 'sucesso.';
+            } else {
+                throw new Exception('Erro ao atualizar os dados.');
             }
         }
     }

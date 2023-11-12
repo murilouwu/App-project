@@ -39,7 +39,7 @@
 			.logoTop{
 				height: 6vh;
 				width: 6vh;
-				background-image: url('../imgs/Logo2.png');
+				background-image: url('https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/Logo2.png');
 				background-position: center;
 				background-size: contain;
 				background-repeat: no-repeat;
@@ -63,7 +63,7 @@
 		width: 100vw;
 		flex-direction: column;
 		background-color: var(--corE);
-		background-image: url('../imgs/map.png');
+		background-image: url('https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/map.png');
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
@@ -111,7 +111,7 @@
 				background-size: 44vh;
 				background-repeat: no-repeat;
 				background-position: center;
-				background-image: url('../imgs/Logo.png');
+				background-image: url('https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/Logo.png');
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -288,7 +288,7 @@
 					color: var(--corC);
 				}
 	.Block-Tre{
-		background-image: url('../imgs/bussyStation.png');
+		background-image: url('https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/bussyStation.png');
 		padding: 15vh 0vw;
 		flex-direction: column;
 		justify-content: center;

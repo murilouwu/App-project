@@ -13,30 +13,30 @@
         ],
         'assets/imgs/Logo.png'
     );
+    if(!isset($_SESSION['user'][0])){
+        $html->Atalho('index.php');
+    }
 ?>
 <body>
     <div class="TopBoard">
-        <img class="logo" src="assets/imgs/Logo2.png">
+        <img class="logo" src="https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/Logo2.png">
         <h1 class="Title">CRONOMETRAIS</h1>
     </div>
     <div class="leftBoard">
         <div class="perfil">
-            <img class="perflImg" src="assets/imgs/luca.png">
-            <h3 class="nameUser">Nome</h3>
+            <img class="perflImg" src="<?php echo$_SESSION['user'][0]['IM_Logo'];?>">
+            <h3 class="nameUser"><?php echo$_SESSION['user'][0]['NM_Provedora'];?></h3>
         </div>
         <hr class="boardDiv">
         <div class="btnList">
             <div class="btnUl"><i class="fa-solid fa-bus"></i><button class="btn" onclick="iframeAlter(0, '.iframe')">Veículos</button></div>
-            <div class="btnUl"><i class="fa-solid fa-map"></i><button class="btn" onclick="iframeAlter(1, '.iframe')">Mapa</button></div>
-            <div class="btnUl"><i class="fa-solid fa-sack-dollar"></i><button class="btn" onclick="iframeAlter(2, '.iframe')">Financeiro</button></div>
-            <div class="btnUl"><i class="fa-solid fa-eye"></i><button class="btn" onclick="iframeAlter(3, '.iframe')">Visualização</button></div>
-            <div class="btnUl"><i class="fa-solid fa-plus"></i><button class="btn" onclick="iframeAlter(4, '.iframe')">Adicionar</button></div>
-            <div class="btnUl"><i class="fa-solid fa-hourglass-half"></i><button class="btn" onclick="iframeAlter(5, '.iframe')">Cronograma</button></div>
+            <div class="btnUl"><i class="fa-solid fa-plus"></i><button class="btn" onclick="iframeAlter(1, '.iframe')">Adicionar</button></div>
+            <div class="btnUl"><button class="btn">Em breve...</button></div>
             <div class="btnUl">
                 <hr>
             </div>
-            <div class="btnUl"><i class="fa-solid fa-user"></i><button class="btn" onclick="iframeAlter(6, '.iframe')">Perfil</button></div>
-            <div class="btnUl"><i class="fa-solid fa-gear"></i><button class="btn" onclick="iframeAlter(7, '.iframe')">Configuração</button></div>
+            <div class="btnUl"><i class="fa-solid fa-user"></i><button class="btn" onclick="iframeAlter(2, '.iframe')">Perfil</button></div>
+            <div class="btnUl"><i class="fa-solid fa-gear"></i><button class="btn" onclick="iframeAlter(3, '.iframe')">Configuração</button></div>
             
             <div class="btnUl sair"><i class="fa-solid fa-door-open"></i><button class="btn" onclick="redirect('index.php')">Sair</button></div>
         </div>
@@ -46,11 +46,7 @@
 <script>
     const Linksforiframe = [
         "DashboardAssets/buss.php",
-        "DashboardAssets/map.php",
-        "DashboardAssets/money.php",
-        "DashboardAssets/view.php",
         "DashboardAssets/add.php",
-        "DashboardAssets/cron.php",
         "DashboardAssets/user.php",
         "DashboardAssets/confgs.php"
     ];

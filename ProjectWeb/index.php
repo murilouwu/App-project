@@ -13,9 +13,10 @@
         ],
         'assets/imgs/Logo.png'
     );
+	$_SESSION['user'] = array();
 ?>
     <body class="RaibowBg-1 flexDisplay">
-		<button class="irTop" style="background-image: url('assets/imgs/nigger.png');"></button>
+		<button class="irTop" style="background-image: url('https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/nigger.png');"></button>
 		<!--tolls-->
 		<div class="Block-top flexDisplay">
 			<div class="certerTop flexDisplay">
@@ -39,7 +40,7 @@
 					<button class="topicOne bntScroll">Desenvolvedores</button>
 				</div>
 				<div class="text2One flexDisplay">
-					<button class="btnLinkApp">Baixe o App <i class="fa-solid fa-circle-arrow-right"></i></button>
+					<button class="btnLinkApp" onclick="redirect('https:\\longdogechallenge.com/')">Baixe o App <i class="fa-solid fa-circle-arrow-right"></i></button>
 				</div>
 			</div>
 			<div class="shortBlockOne flexDisplay">
@@ -67,10 +68,10 @@
 					<h2>O que é este Site?</h2>
 					<p>O site do Cronometrais tem o objetivo de fornecer as empresas interessadas, em facilitar o uso de seus clientes por meio da nossa aplicação.</p>
 				</div>
-				<img src="assets/imgs/luca.png" class="imgReprBlock2">
+				<img src="https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/luca.png" class="imgReprBlock2">
 			</div>
 			<div class="meioBlock2 typeMain2-Block2 flexDisplay">
-				<img src="assets/imgs/bitcoin.png" class="imgReprBlock2">
+				<img src="https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/bitcoin.png" class="imgReprBlock2">
 				<div class="textBlock2 flexDisplay">
 					<div class="blockIconBlock2 flexDisplay">
 						<i class="fa-solid fa-globe"></i>
@@ -109,7 +110,7 @@
 					<h2>Entre e Participe!</h2>
 					<p>Faça sua conta e administre os ônibus e Vans da sua empresa por aqui</p>
 				</div>
-				<img src="assets/imgs/joia.png" class="imgReprBlock2">
+				<img src="https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/joia.png" class="imgReprBlock2">
 			</div>
 			<div class="meioBlock2 typeMain2-Block2 flexDisplay">
 				<div class="textBlock4 flexDisplay">
@@ -128,7 +129,7 @@
 			<div class="centerBlock5 flexDisplay">
 				<div class="TextBlock5 flexDisplay">
 					<h3>Cronometrais</h3>
-					<p>essa Equipe ....</p>
+					<p>essa é a equipe por trás do projeto! Somos:<br>Emanuelle a administradora;<br>Murilo e Rafael os programadores;<br>Ana Beatriz, Laryssa e Yasmin, as da documentação entre outros.<br>Todos da Etec de Peruíbe, unimos para criar este projeto!</p>
 				</div>
 				<div class="developerBlock5 flexDisplay">
                     <div class="membersUser">

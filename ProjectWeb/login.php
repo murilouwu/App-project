@@ -14,43 +14,119 @@
         'assets/imgs/Logo.png'
     );
     $Log = $_GET['log'];
-    if(!isset($Log)){
+    if(!isset($Log) || $Log!=0 && $Log!=1){
         $html->Atalho('index.php');
     }
+    $_SESSION['user'] = array();
 ?>
     <body>
         <div class="container" id="container">
             <div class="form-container sign-up-container">
-                <form>
+                <form method="post">
                     <h1>Entrar</h1>
-                    <div class="social-container">
-                        <div class="logRed" class="social"><i class="fa-brands fa-google"></i></div>
-                        <div class="logRed" class="social"><i class="fa-brands fa-github"></i></div>
-                    </div>
-                    <input type="email" placeholder="Email ou Número de telefone" />
-                    <input type="password" placeholder="Password" />
-                    <a href="#">esqueceu a senha?</a>
-                    <button>Entrar</button>
+                    <input name="LogBases" type="text" placeholder="Nome da Empresa ou CNPJ" />
+                    <input name="LogEmail" type="email" placeholder="email" />
+                    <input name="LogPassW" type="password" placeholder="Password" minlength="5"/>
+                    <a href="#">esqueceu a senha?(função em breve)</a>
+                    <input name="Logbtn" type="submit" value="Entrar">
                 </form>
             </div>
             <div class="form-container sign-up-container">
-                <form>
+                <form method="post" enctype="multipart/form-data">
                     <h1>Crie sua Conta</h1>
-                    <div class="social-container">
-                        <div class="logRed" class="social"><i class="fa-brands fa-google"></i></div>
-                        <div class="logRed" class="social"><i class="fa-brands fa-github"></i></div>
+                    <div class="ass">
+                        <input type="radio" name="assCAD" id="A_AssBtn" value="0" class="assradio" checked>
+                        <input type="radio" name="assCAD" id="B_AssBtn" value="1" class="assradio">
+                        <input type="radio" name="assCAD" id="C_AssBtn" value="2" class="assradio">
+                        <span id="price">Assinatura Base: R$0,00 por mês</span>
+                        <label for="A_AssBtn" class="assibtn selecionado"><i class="fa-solid fa-skull"></i></label>
+                        <label for="B_AssBtn" class="assibtn"><i class="fa-solid fa-user-ninja"></i></label>
+                        <label for="C_AssBtn" class="assibtn"><i class="fa-solid fa-crown"></i></label>
+                            <script>
+                                let ass = [
+                                    ['Base', 'Ninja', 'Pro'], 
+                                    ['0,00', '10,50', '20,40']
+                                ];
+                                document.querySelectorAll('.assibtn').forEach(function (label, index) {
+                                    label.addEventListener('click', function () {
+                                        document.getElementById('A_AssBtn').checked = index === 0;
+                                        document.getElementById('B_AssBtn').checked = index === 1;
+                                        document.getElementById('C_AssBtn').checked = index === 2;
+
+                                        document.querySelectorAll('.assibtn').forEach(function (lbl, i) {
+                                            lbl.classList.toggle('selecionado', i === index);
+                                        });
+
+                                        document.getElementById('price').textContent = 'Assinatura '+ass[0][index]+': R$'+ass[1][index]+' por mês';
+                                    });
+                                });
+                            </script>
                     </div>
                     <div class="scrool">
-                        <input type="text" placeholder="Nome do CEO" />
-                        <input type="text" placeholder="Nome da Empresa" />
-                        <input type="email" placeholder="Email de Contato" />
-                        <input type="password" placeholder="CNPJ" />
-                        <input type="password" placeholder="Senha" />
-                        <input type="password" placeholder="Confirmar Senha" />
-                        <input type="file" id="fotoLogoCad">
-                        <label class="btnFile" for="fotoLogoCad"><i class="fa-solid fa-angles-up"></i><i class="fa-solid fa-image"></i> enviar logo</label></button>
+                        <input name="CeoNameCAD" type="text" placeholder="Nome do CEO" />
+                        <input name="EmpNameCAD" type="text" placeholder="Nome da Empresa" />
+                        <input name="CtEmailCAD" type="email" placeholder="Email de Contato" />
+                        <input name="CeoCNPJCAD" type="text" id="CNPJ" placeholder="CNPJ" maxlength="17"/>
+                            <script>
+                                let ess = false;
+                                document.addEventListener("keydown", function(event){
+                                    if(event.key === "Backspace"){
+                                        ess = true;
+                                    }else{
+                                        ess = false;
+                                    }
+                                });
+                                document.querySelector('#CNPJ').addEventListener('input', ()=>{
+                                    let input = document.querySelector('#CNPJ');
+                                    let possAtl = input.value.length-1;
+                                    let Ver = input.value.slice(-1) == '_' || input.value.slice(-1) == '-' ? false:input.value.slice(-1);
+                                    let Ver2 = Ver==false? false:isNaN(Ver);
+                                    if(Ver2==true){
+                                        input.value = input.value.substr(0, possAtl);
+                                    }else if(possAtl==1 || possAtl==5){
+                                        if(!ess){
+                                            input.value += ".";
+                                        }else{
+                                            input.value = input.value.substr(0, possAtl);
+                                        }
+                                    }else if(possAtl==8){
+                                        if(!ess){
+                                            input.value += "/0001-";
+                                        }else{
+                                            input.value = input.value.substr(0, possAtl);
+                                        }
+                                    };
+                                });
+                            </script>
+                        <input name="NewPassCAD" type="password" placeholder="Senha" minlength="5"/>
+                        <input name="CofPassCAD" type="password" placeholder="Confirmar Senha" minlength="5"/>
+                        <input name="ImgFileCAD" type="file" id="fotoLogoCad" accept="image/*" />
+                        <div class="toggle-pill-dark" id="dranwcheck">
+                            <input type="checkbox" id="checkSegure" onclick="TurnCheckBtn(this, 1)">
+                            <label for="checkSegure"></label>
+                            <span onclick="redirectNewPage('Contract.pdf')">Você aceita os termos de uso?</span>
+                        </div>
+                            <script>
+                                function TurnCheckBtn(button, dranw) {
+                                    let btn = document.querySelector('#btnEnviarCad');
+                                    let fun = dranw == 1 ? 0 : 1;
+                                    let textOn = "TurnCheckBtn(this, " + fun + ")";
+                                    button.setAttribute('onclick', textOn);
+                                    btn.disabled = dranw == 0;
+                                }; 
+                            </script>
+                        
+                        <label class="btnFile" for="fotoLogoCad" id="btnimageFun"><i class="fa-solid fa-angles-up"></i><i class="fa-solid fa-image"></i> enviar logo</label>
+                            <script>
+                                $("#fotoLogoCad").change(function(){
+                                    let btn = document.querySelector('#btnimageFun');
+                                    btn.setAttribute('class', 'btnFile disBtn');
+                                    btn.setAttribute('for', '');
+                                    btn.innerHTML = '<i class="fa-solid fa-image"></i>Imagem Pronta';
+                                });
+                            </script>
                     </div>
-                    <button>Cadastrar</button>
+                    <input name="CADbtn" type="submit" value="Cadastrar" id="btnEnviarCad" disabled>
                 </form>
             </div>
             <div class="overlay-container">
@@ -112,4 +188,85 @@
     </script>
 <?php 
     $html->foot();
+
+    if(isset($_POST['CADbtn'])){
+        $userCad = array($_POST['CeoNameCAD'], $_POST['EmpNameCAD'], $_POST['CtEmailCAD'], $_POST['CeoCNPJCAD'], $_POST['NewPassCAD'], $_POST['CofPassCAD'], $_FILES['ImgFileCAD'], $_POST['assCAD']);
+
+        if(!in_array('', $userCad) && $userCad[4] == $userCad[5] && isset($userCad[6]) && !empty($userCad[6]['name'])){
+            $partes = explode('.', $userCad[6]['name']);
+            $extensao = end($partes);
+            
+            $imgLocal = 'assets/imgs/imgsBank/'.$userCad[0].'_'.$userCad[1].'Logo.'.$extensao;
+            $FolderFile = 'assets/imgs/imgsBank/';
+            $NameFile = $userCad[0].'_'.$userCad[1].'Logo.'.$extensao;
+
+            $imgVer = $html->upload($userCad[6], $FolderFile, $NameFile);
+            if($imgVer != true){
+                $html->mensage('erro no upload!');
+                if($imgVer != false){
+                    $html->mensage($imgVer);
+                }
+            }else{
+                $userCad[6] = $imgLocal;
+                $date = array('NM_Provedora', 'NE_Email', 'CD_CNPJ', 'AS_Assinatura', 'IM_Logo', 'NM_CEO', 'Key_senha');
+                $Verifcs = array(0, 1, 2);
+                $Configs = array(array('OR', 'OR'));
+                //reordem de UserCad
+                $userFinal = array($userCad[1], $userCad[2], $userCad[3], $userCad[7], $userCad[6], $userCad[0], $html->Cripto($userCad[4]));
+
+                $UserAction = new BankUse();
+                $UserAction->NameTable = 'provedora';
+                $UserAction->Dates = $date;
+                
+                $UserFun = $UserAction->InsertUser($pdo, $userFinal, $Verifcs, $Configs);
+                if($UserFun == 'sucesso'){
+                    $html->mensage($UserFun);
+                }else{
+                    $html->mensage($UserFun);
+                    if(unlink($userCad[6])){}else{
+                        $html->mensage("EROR 404");
+                    }
+                }
+            }
+        }else if($userCad[4] != $userCad[5]){
+            $html->mensage("escreva a mesma senha para confimar!");
+        }else if(!isset($userCad[6]) || empty($userCad[6]['name'])){
+            $html->mensage("envie uma imagem!");
+        }else{
+            $html->mensage("Há campos vazios");
+        }
+    }
+
+    if(isset($_POST['Logbtn'])){
+        $userLog = array($_POST['LogBases'], $_POST['LogEmail'], $_POST['LogPassW']);
+        if(!in_array('', $userLog)){
+            $date = array('NM_Provedora', 'NE_Email', 'CD_CNPJ', 'AS_Assinatura', 'IM_Logo', 'NM_CEO', 'Key_senha');
+            $where = "WHERE (".$date[0]." = '".$userLog[0]."' AND ".$date[1]." = '".$userLog[1]."') OR (".$date[2]." = '".$userLog[0]."' AND ".$date[1]." = '".$userLog[1]."');";
+            
+            $UserAction = new BankUse();
+            $UserAction->NameTable = 'provedora';
+            $UserAction->Dates = $date;
+            
+            $UserFun = $UserAction->GetUser($pdo, "", $where);
+
+            if(is_string($UserFun)){
+                $html->mensage($UserFun);
+            }else{
+                $a = 0;
+                foreach($UserFun as $row){
+                    $_SESSION['user'][$a] = $row;
+                    $a++;
+                }
+                if($html->CriptoVer($userLog[2], $_SESSION['user'][0]['Key_senha']) == true){
+                    echo "<script>redirect('AdmBuss.php');</script>";
+                }else{
+                    $html->mensage('Senha Incorreta');
+                    $_SESSION['user'] = array();
+                }
+            }
+        }else{
+            $html->mensage("Há campos vazios!");
+        }
+    }
+
 ?>

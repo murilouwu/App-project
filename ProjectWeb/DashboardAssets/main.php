@@ -15,7 +15,7 @@
     );
 ?>
     <style>
-        .UlBtnHeaderMainPage:hover, .UlBtnM_MainPage:hover, .UlBtnFotterMainPage:hover{
+        .btnM_MainPage:hover{
             cursor: pointer;
         }
         .blockMainPage{
@@ -44,7 +44,7 @@
                     .logoImgMainPage{
                         width: 6vw;
                         height: 4vw;
-                        background-image: url(../assets/imgs/Logo2.png);
+                        background-image: url(https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/Logo2.png);
                         background-size: cover;
                         background-position: center;
                         background-repeat: no-repeat;
@@ -59,34 +59,6 @@
                         letter-spacing: 0.3vw;
                         margin-left: 2vw;
                     }
-                .BtnsHeaderMainPage{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: center;
-                }
-                    .UlBtnHeaderMainPage{
-                        color: var(--corA);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 3vh;
-                        font-family: monospace;
-                        font-weight: bold;
-                        margin-right: 5vw;
-                    }
-                        .btnHeaderMainPage{
-                            color: var(--corD);
-                            width: 4vw;
-                            height: 4vw;
-                            background-color: var(--corA);
-                            border: none;
-                            border-radius: 1vw;
-                            font-size: 4vh;
-                        }
-                        .UlBtnHeaderMainPage h3{
-                            margin-left: 1vw;
-                        }
             .M_MainPage{
                 display: flex;
                 flex-direction: row;
@@ -142,12 +114,12 @@
                             width: 24vw;
                             margin-right: -9vw;
                             margin-top: 4vh;
-                            background-image: url(../assets/imgs/VeicA.png);
+                            background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true);
                             filter: drop-shadow(-13px 1px 0px rgba(0 0 0/ 21%));
                         } 
                         .VclBMainPage{
                             color: var(--corA);
-                            background-image: url(../assets/imgs/VeicB.png);
+                            background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true);
                             height: 33vh;
                             width: 34vw;
                             filter: drop-shadow(-13px -7px 0px rgba(0 0 0/ 36%));
@@ -161,7 +133,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding-bottom: 8vh;
+                padding-bottom: 100vh;
             }
                 .balsFotterMainPage{
                     width: 100vw;
@@ -182,77 +154,59 @@
                         }
                         .ballFotterMainPage:nth-child(2){
                             background-color: var(--corA);
-                            clip-path: none;
-                            margin-top: -80vh;
-                            animation: ballEdit 0.75s linear;
-                            width: 27vw;
                             z-index: 2;
-                            margin-right: 19vh;
-                            height: 42vh;
-                            border-radius: 0.5vw;
+                            clip-path: ellipse(50% 100% at 50% 103%);
+                            margin-top: -18vh;
+                            margin-right: 0vh;
+                            width: 50vw;
+                            height: 10vh;
+                            border-radius: 0;
+                            align-items: center;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
                         }
                             .blockMensageMainPage{
                                 display: none;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                width: 43vw;
+                                margin-top: 2vh;
                             }
                                 .imgRepresentMainPage{
-                                    width: 10vw;
-                                    height: 10vw;
+                                    width: 21vw;
+                                    height: auto;
                                 }
                                 .mensMainPage{
-                                    word-break: break;
+                                    word-wrap: break-word;
+                                    font-size: 2vh;
+                                    font-family: cursive;
+                                    font-weight: bold;
+                                    color: var(--corD);
+                                    width: 41vw;
+                                    padding: 1vh;
                                 }
-                .BtnsFotterMainPage{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: center;
-                }
-                    .UlBtnFotterMainPage{
-                        color: var(--corD);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 3vh;
-                        font-family: monospace;
-                        font-weight: bold;
-                        margin-right: 5vw;
-                    }
-                        .btnFotterMainPage{
-                            color: var(--corD);
-                            width: 4vw;
-                            height: 4vw;
-                            background-color: var(--corB);
-                            border: none;
-                            border-radius: 1vw;
-                            font-size: 4vh;
-                        }
-                        .UlBtnFotterMainPage h3{
-                            margin-left: 1vw;
-                        }
         @keyframes ballEdit{
             0%{
                 clip-path: ellipse(50% 100% at 50% 103%);
                 margin-top: -19vh;
                 margin-right: 0vh;
-                width: 50vw;
                 height: 10vh;
                 border-radius: 0;
-                
             }
             50%{
                 clip-path: ellipse(50% 170% at 50% 67%);
-                margin-top: -40vh;
-                margin-right: 9vh;
-                width: 42vw;
-                height: 25vh;
+                margin-top: -28vh;
+                margin-right: 1vh;
+                height: 23vh;
                 border-radius: 0.25vw;
             }
             100%{
                     clip-path: none;
-                    margin-top: -80vh;
-                    width: 27vw;
-                    margin-right: 19vh;
-                    height: 42vh;
+                    margin-top: -36vh;
+                    margin-right: 2vh;
+                    height: 36vh;
                     border-radius: 0.5vw;
             }
         }
@@ -264,34 +218,24 @@
                     <div class="logoImgMainPage"></div>
                     <h1>CRONOMETRAIS</h1>
                 </div>
-                <div class="BtnsHeaderMainPage">
-                    <div class="UlBtnHeaderMainPage">
-                        <button class="btnHeaderMainPage"><i class="fa-solid fa-bus"></i></button>
-                        <h3>Veículos</h3>
-                    </div>
-                    <div class="UlBtnHeaderMainPage">
-                        <button class="btnHeaderMainPage"><i class="fa-solid fa-map"></i></button>
-                        <h3>Mapa</h3>
-                    </div>
-                </div>
             </div>
             <div class="M_MainPage">
                 <div class="BtnsM_MainPage">
                     <div class="UlBtnM_MainPage">
-                        <button class="btnM_MainPage"><i class="fa-solid fa-sack-dollar"></i></button>
-                        <h3>Financeiro</h3>
-                    </div>
-                    <div class="UlBtnM_MainPage">
-                        <button class="btnM_MainPage"><i class="fa-solid fa-eye"></i></button>
-                        <h3>Visualização</h3>
+                        <button class="btnM_MainPage"><i class="fa-solid fa-bus"></i></button>
+                        <h3>Veículos</h3>
                     </div>
                     <div class="UlBtnM_MainPage">
                         <button class="btnM_MainPage"><i class="fa-solid fa-plus"></i></button>
                         <h3>Adicionar</h3>
                     </div>
                     <div class="UlBtnM_MainPage">
-                        <button class="btnM_MainPage"><i class="fa-solid fa-hourglass-half"></i></button>
-                        <h3>Cronograma</h3>
+                        <button class="btnM_MainPage"><i class="fa-solid fa-user"></i></button>
+                        <h3>Perfil</h3>
+                    </div>
+                    <div class="UlBtnM_MainPage">
+                        <button class="btnM_MainPage"><i class="fa-solid fa-gear"></i></button>
+                        <h3>Configuração</h3>
                     </div>
                 </div>
                 <div class="bussysMainPage">
@@ -302,21 +246,53 @@
             <div class="FotterMainPage">
                 <div class="balsFotterMainPage">
                     <div class="ballFotterMainPage"></div>
-                    <div class="ballFotterMainPage" id="">
-                        <div class="blockMensageMainPage" id="">
-                            <img src="../assets/imgs/Logo.png" class="imgRepresentMainPage">
-                            <p class="mensMainPage"></p>
+                    <div class="ballFotterMainPage" id="ballFotterMainPageA">
+                        <div class="blockMensageMainPage">
+                            <img src="https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/Logo.png" class="imgRepresentMainPage">
+                            <p class="mensMainPage">....</p>
+                            <script>
+                                let divs = [document.querySelector('.blockMensageMainPage'), document.querySelector('.mensMainPage'), document.querySelector('#ballFotterMainPageA'), document.querySelector('.imgRepresentMainPage')];
+                                let btns = document.querySelectorAll('.btnM_MainPage');
+                                let blockItem = [
+                                    ['https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/bussyStation.png', 'Na guia de Veículos, oferecemos uma visão abrangente de todos os seus veículos. Rastreie em tempo real, otimize rotas e melhore a eficiência operacional da sua frota de ônibus e vans.'],
+                                    ['https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/VeicA.png', 'Em Adicionar Veículos, você tem o controle total sobre a gestão da sua frota. Cadastre novos veículos, personalize horários e rotas para garantir uma operação de transporte perfeitamente organizada.'],
+                                    ['https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/bitcoin.png', 'Edite seu Perfil facilmente nesta seção. Mantenha suas informações sempre atualizadas, incluindo contato e detalhes da empresa. Uma maneira simples de manter uma presença profissional.'],
+                                    ['https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/Bussy.png', 'A guia de Configurações oferece opções personalizadas para adaptar o sistema às necessidades exclusivas da sua empresa. Personalize recursos, ajuste preferências e mantenha tudo sob controle.']
+                                ];
+
+                                btns.forEach((btn, btnIndex) => {
+                                    btn.addEventListener('click', function () {
+                                        divs[2].style.animation = 'ballEdit 0.5s linear';
+                                        setTimeout(()=>{
+                                            divs[0].style.display = 'flex';
+                                            divs[3].src = blockItem[btnIndex][0];
+                                            divs[1].textContent = blockItem[btnIndex][1];
+                                            // Altera o estilo para .cem
+                                            divs[2].style.clipPath = 'none';
+                                            divs[2].style.marginTop = '-36vh';
+                                            divs[2].style.marginRight = '2vh';
+                                            divs[2].style.width = '50vw';
+                                            divs[2].style.height = '36vh';
+                                            divs[2].style.borderRadius = '0.5vw';
+                                        }, 500);
+                                    });
+
+                                    btn.addEventListener('dblclick', function () {
+                                        divs[2].style.animation = 'ballEdit 0.5s linear reverse';
+                                        setTimeout(()=>{
+                                            divs[0].style.display = 'none';
+                                            // Altera o estilo para .zero
+                                            divs[2].style.clipPath = 'ellipse(50% 100% at 50% 103%)';
+                                            divs[2].style.marginTop = '-18vh';
+                                            divs[2].style.marginRight = '0vh';
+                                            divs[2].style.width = '50vw';
+                                            divs[2].style.height = '10vh';
+                                            divs[2].style.borderRadius = '0';
+                                        }, 500);
+                                    });
+                                });
+                            </script>
                         </div>
-                    </div>
-                </div>
-                <div class="BtnsFotterMainPage">
-                    <div class="UlBtnFotterMainPage">
-                        <button class="btnFotterMainPage"><i class="fa-solid fa-user"></i></button>
-                        <h3>Perfil</h3>
-                    </div>
-                    <div class="UlBtnFotterMainPage">
-                        <button class="btnFotterMainPage"><i class="fa-solid fa-gear"></i></button>
-                        <h3>Configuração</h3>
                     </div>
                 </div>
             </div>
