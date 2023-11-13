@@ -44,8 +44,8 @@
                         <label for="C_AssBtn" class="assibtn"><i class="fa-solid fa-crown"></i></label>
                             <script>
                                 let ass = [
-                                    ['Base', 'Ninja', 'Pro'], 
-                                    ['0,00', '10,50', '20,40']
+                                    ['Vans', 'Ônibus', 'Conjunto'], 
+                                    [5, 10, (ass[1][0] + ass[1][1])]
                                 ];
                                 document.querySelectorAll('.assibtn').forEach(function (label, index) {
                                     label.addEventListener('click', function () {
@@ -57,7 +57,7 @@
                                             lbl.classList.toggle('selecionado', i === index);
                                         });
 
-                                        document.getElementById('price').textContent = 'Assinatura '+ass[0][index]+': R$'+ass[1][index]+' por mês';
+                                        document.getElementById('price').textContent = 'Assinatura para '+ass[0][index]+': R$'+ass[1][index]+' por mês';
                                     });
                                 });
                             </script>
