@@ -106,7 +106,7 @@
             }
             $stmt->execute();
             if ($stmt->rowCount() > 0) {
-                return "cadastrado já existe, >:(";
+                return "Cadastrado já existe, >:(";
             }else{
                 try {
                     $DtsToText = implode(', ', $this->Dates);

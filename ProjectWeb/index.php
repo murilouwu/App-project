@@ -2,7 +2,7 @@
 	include('assets/php/PhpMain.php');
 	$html = new HtmlBased();
     $html->HeaderEcho(
-        'Home', 
+        'Inicial', 
         [
             [0, 'http-equiv="X-UA-Compatible" content="IE=edge"'],
             [0, 'name="viewport" content="width=device-width, initial-scale=1.0"'],
@@ -46,11 +46,11 @@
 			<div class="shortBlockOne flexDisplay">
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-book-open"></i>
-					<p class="palagrafyOne">Melhor a acessibilidade em transportes públicos, uma maior agilidade na procura de rotas rodoviarias, pontos de embarque e desembarque, visualização em tempo real dos veículos.</p>
+					<p class="palagrafyOne">Melhor a acessibilidade em transportes públicos, uma maior agilidade na procura de rotas rodoviárias, pontos de embarque e desembarque, visualização em tempo real dos veículos.</p>
 				</div>
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-users"></i>
-                    <p class="palagrafyOne">Transportes públicos com maior acessibilidade aos PCDs. Carteira Digital para PCDs, proporcionando aos passageiros uma locomoçao mais segura.</p>
+                    <p class="palagrafyOne">Transportes públicos com maior acessibilidade aos PCDs. Carteira Digital para PCDs, proporcionando aos passageiros uma locomoção mais segura.</p>
 				</div>
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-user-pen"></i>
@@ -58,7 +58,7 @@
 				</div>
 				<div class="cardTextOne flexDisplay">
 					<i class="iconShort0 fa-solid fa-sack-xmark"></i>
-                    <p class="palagrafyOne">Seja Usuário Premium e tenha por exemplo: encaminhação de localização em tempo real, ou análise de trajeto do veículo sincronicamente. Entre outras funções.</p>
+                    <p class="palagrafyOne">Seja Usuário Premium e tenha, por exemplo: encaminhamento de localização em tempo real, ou análise de trajeto do veículo sincronicamente. Entre outras funções.</p>
 				</div>
 			</div>
 		</div>
@@ -92,11 +92,11 @@
 			  </div>
 			  <div class="cardTre flexDisplay">
 			    <i class="fa-solid fa-cube"></i>
-			    <p class="cardTextTre flexDisplay"><label>Compartilhamento de rota</label>Encaminhamento por meio de um código da rota para compartilhar por exemplo via Whatsapp.</p>
+			    <p class="cardTextTre flexDisplay"><label>Compartilhamento de rota</label>Encaminhamento por meio de um código da rota para compartilhar, por exemplo, via WhatsApp.</p>
 			  </div>
 			  <div class="cardTre flexDisplay">
 			    <i class="fa-solid fa-address-book"></i>
-			    <p class="cardTextTre flexDisplay"><label>Transparidade</label>o sistema é transparente as empresas associadas, facilitando sua administração.</p>
+			    <p class="cardTextTre flexDisplay"><label>transparente</label>O sistema é transparente as empresas associadas, facilitando sua administração.</p>
 			  </div>
 			  <div class="cardTre flexDisplay">
 			    <i class="fa-solid fa-heart"></i>
@@ -107,7 +107,7 @@
 		<div class="Block-Two flexDisplay">
 			<div class="meioBlock2 flexDisplay">
 				<div class="textBlock2 flexDisplay">
-					<h2>Entre e Participe!</h2>
+					<h2>Entre e Partícipe!</h2>
 					<p>Faça sua conta e administre os ônibus e Vans da sua empresa por aqui</p>
 				</div>
 				<img src="https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/joia.png" class="imgReprBlock2">
@@ -120,7 +120,7 @@
 					</div>
 					<div class="blockIconBlock2 cor2-Block2 cor2-Block4 flexDisplay">
 						<i class="fa-solid fa-user-plus"></i>
-						<a class="BtnEntrarBlock4 cssBlock4" href="login.php?log=1">Se Cadastrar</a>
+						<a class="BtnEntrarBlock4 cssBlock4" href="login.php?log=1">Cadastrar-se</a>
 					</div>
 				</div>
 			</div>
@@ -129,7 +129,7 @@
 			<div class="centerBlock5 flexDisplay">
 				<div class="TextBlock5 flexDisplay">
 					<h3>Cronometrais</h3>
-					<p>essa é a equipe por trás do projeto! Somos:<br>Emanuelle a administradora;<br>Murilo e Rafael os programadores;<br>Ana Beatriz, Laryssa e Yasmin, as da documentação entre outros.<br>Todos da Etec de Peruíbe, unimos para criar este projeto!</p>
+					<p>Essa é a equipe por trás do projeto! Somos:<br>Emanuelle a administradora;<br>Murilo e Rafael os programadores;<br>Ana Beatriz, Laryssa e Yasmin, as da documentação, entre outros.<br>Todos da ETEC de Peruíbe, unimos para criar este projeto!</p>
 				</div>
 				<div class="developerBlock5 flexDisplay">
                     <div class="membersUser">

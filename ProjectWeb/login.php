@@ -2,7 +2,7 @@
 	include('assets/php/PhpMain.php');
 	$html = new HtmlBased();
     $html->HeaderEcho(
-        'Entrar', 
+        'Conta', 
         [
             [0, 'http-equiv="X-UA-Compatible" content="IE=edge"'],
             [0, 'name="viewport" content="width=device-width, initial-scale=1.0"'],
@@ -25,8 +25,8 @@
                 <form method="post">
                     <h1>Entrar</h1>
                     <input name="LogBases" type="text" placeholder="Nome da Empresa ou CNPJ" />
-                    <input name="LogEmail" type="email" placeholder="email" />
-                    <input name="LogPassW" type="password" placeholder="Password" minlength="5"/>
+                    <input name="LogEmail" type="email" placeholder="Email" />
+                    <input name="LogPassW" type="password" placeholder="Senha" minlength="5"/>
                     <a href="#">esqueceu a senha?(função em breve)</a>
                     <input name="Logbtn" type="submit" value="Entrar">
                 </form>
@@ -38,15 +38,16 @@
                         <input type="radio" name="assCAD" id="A_AssBtn" value="0" class="assradio" checked>
                         <input type="radio" name="assCAD" id="B_AssBtn" value="1" class="assradio">
                         <input type="radio" name="assCAD" id="C_AssBtn" value="2" class="assradio">
-                        <span id="price">Assinatura Base: R$0,00 por mês</span>
-                        <label for="A_AssBtn" class="assibtn selecionado"><i class="fa-solid fa-skull"></i></label>
-                        <label for="B_AssBtn" class="assibtn"><i class="fa-solid fa-user-ninja"></i></label>
-                        <label for="C_AssBtn" class="assibtn"><i class="fa-solid fa-crown"></i></label>
+                        <span id="price">Assinaturas:</span>
+                        <label for="A_AssBtn" class="assibtn"><i class="fa-solid fa-van-shuttle"></i></label>
+                        <label for="B_AssBtn" class="assibtn"><i class="fa-solid fa-bus"></i></label>
+                        <label for="C_AssBtn" class="assibtn"><i class="fa-regular fa-star"></i></label>
                             <script>
                                 let ass = [
                                     ['Vans', 'Ônibus', 'Conjunto'], 
-                                    [5, 10, (ass[1][0] + ass[1][1])]
+                                    [1200, 1000]
                                 ];
+                                ass[1][2] = ass[1][0] + ass[1][1];
                                 document.querySelectorAll('.assibtn').forEach(function (label, index) {
                                     label.addEventListener('click', function () {
                                         document.getElementById('A_AssBtn').checked = index === 0;
@@ -57,7 +58,7 @@
                                             lbl.classList.toggle('selecionado', i === index);
                                         });
 
-                                        document.getElementById('price').textContent = 'Assinatura para '+ass[0][index]+': R$'+ass[1][index]+' por mês';
+                                        document.getElementById('price').textContent = 'Para empresas de '+ass[0][index]+': R$'+ass[1][index]+',00 por cadastro';
                                     });
                                 });
                             </script>
@@ -116,7 +117,7 @@
                                 }; 
                             </script>
                         
-                        <label class="btnFile" for="fotoLogoCad" id="btnimageFun"><i class="fa-solid fa-angles-up"></i><i class="fa-solid fa-image"></i> enviar logo</label>
+                        <label class="btnFile" for="fotoLogoCad" id="btnimageFun"><i class="fa-solid fa-angles-up"></i><i class="fa-solid fa-image"></i> Enviar logo</label>
                             <script>
                                 $("#fotoLogoCad").change(function(){
                                     let btn = document.querySelector('#btnimageFun');
@@ -137,8 +138,8 @@
                         <button class="ghost" id="signIn">Entre</button>
                     </div>
                     <div class="overlay-panel overlay-right">
-                        <h1>Olá, Interresado!</h1>
-                        <p>Seja bem vindo, a nossa plataforma</p>
+                        <h1>Olá, interessado!</h1>
+                        <p>Seja bem-vindo, a nossa plataforma</p>
                         <button class="ghost" id="signUp">Cadastra-se</button>
                     </div>
                 </div>
@@ -175,16 +176,17 @@
                 Overs[1].style.animation = '';
             }, 500);
         });
-        <?php
-            $fun = $_GET['log'];
-            if($fun == 1){
-                echo '
-                    window.onload = ()=>{
-                        signUpButton.click();
-                    }      
-                ';
-            }
-        ?>
+
+        window.onload = ()=>{
+            <?php
+                $fun = $_GET['log'];
+                if($fun == 1){
+                    echo '
+                        signUpButton.click();     
+                    ';
+                }
+            ?>
+        };
     </script>
 <?php 
     $html->foot();
@@ -202,7 +204,7 @@
 
             $imgVer = $html->upload($userCad[6], $FolderFile, $NameFile);
             if($imgVer != true){
-                $html->mensage('erro no upload!');
+                $html->mensage('Erro no upload!');
                 if($imgVer != false){
                     $html->mensage($imgVer);
                 }
@@ -229,9 +231,9 @@
                 }
             }
         }else if($userCad[4] != $userCad[5]){
-            $html->mensage("escreva a mesma senha para confimar!");
+            $html->mensage("Escreva a mesma senha para confirmar!");
         }else if(!isset($userCad[6]) || empty($userCad[6]['name'])){
-            $html->mensage("envie uma imagem!");
+            $html->mensage("Envie uma imagem!");
         }else{
             $html->mensage("Há campos vazios");
         }
