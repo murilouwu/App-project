@@ -1,0 +1,170 @@
+@import 'preset.css';
+
+.btnBack{
+    background-color: var(--corB);
+    position: absolute;
+    border: none;
+    font-size: 3vh;
+    padding: 2vh;
+    border-radius: 10vw;
+    color: var(--corD);
+    margin: 2vh 95vw 0 0;
+    z-index: 2;
+}
+    .btnBack span{
+        display: none;
+        width: 0vh;
+        position: absolute;
+        background-color: var(--corB);
+        margin: -5vh 0vw 0vh 3vw;
+        padding: 1.5vh;
+        justify-content: center;
+        border-radius: 0.25vw;
+        font-weight: bold;
+        font-family: monospace;
+    }
+    .btnBack:hover{
+        cursor: pointer;
+    }
+    .btnBack:hover span{
+        display: flex;
+        width: 34vh;
+    }
+
+body{
+    background-color: var(--corC);
+}
+    .block{
+        background-color: var(--corD);
+        padding: 2vw;
+        border-radius: 0.5vw;
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+        .DesBlock{
+            background-color: var(--corD);
+            padding: 4vh 2vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+            .DesBlock i{
+                font-size: 16vh;
+                color: var(--corB);
+                margin-bottom: 2vh;
+            }
+            .DesBlock h1{
+                color: var(--corA);
+                font-family: monospace;
+                font-style: italic;
+                letter-spacing: 0.25vw;
+                margin-bottom: 1vh;
+                font-weight: bold;
+                font-size: 6vh;
+            }
+            .DesBlock h3{
+                color: var(--corC);
+                font-family: fangsong;
+                font-weight: 500;
+                font-size: 4vh;
+            }
+    .mainBlock{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+        .inputUl{
+            width: 100%;
+            margin-bottom: 5vh;
+            margin-top: 13vh;
+        }
+            .inputUl i{
+                color: var(--corC);
+                font-size: 4vh;
+            }
+            .inputUl input{
+                background-color: var(--corD);
+                color: var(--corC);
+                border: none;
+                border-bottom: 1px solid var(--corC);
+                width: 80%;
+                font-size: 3vh;
+                font-family: cursive;
+                margin-left: 1vw;
+            }
+        .mainBlock input[type=submit]{
+            background-color: var(--corB);
+            border: none;
+            padding: 1vh;
+            font-size: 4vh;
+            font-weight: bold;
+            font-family: sans-serif;
+            letter-spacing: 0.15vw;
+            border-radius: 0.25vw;
+            color: var(--corC);
+            width: auto;
+            height: auto;
+        }
+            .mainBlock input[type=submit]:hover{
+                cursor: pointer;
+            }
+.bgWhite{
+    background: var(--corD);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    
+    .title{
+        margin-top: 0px;
+        color: var(--corA);
+        font-family: monospace;
+        letter-spacing: 0.25vw;
+        margin-bottom: 5vh;
+        font-weight: bold;
+        font-size: 6vh;
+    }
+    
+    .customBtn{
+        background-color: var(--corB);
+        border: none;
+        padding: 1vh;
+        font-size: 4vh;
+        font-weight: bold;
+        font-family: sans-serif;
+        letter-spacing: 0.15vw;
+        border-radius: 0.25vw;
+        margin-top: 5vh;
+    }
+    
+    form input{
+        display:inline-block;
+        width: 10vh;
+        height: 10vh;
+        text-align:center;
+        background-color: var(--corC);
+        border: none;
+        border-radius: 0.25vw;
+        color: var(--corB);
+    }
+
+    .bgWhite input[type=submit]{
+        background-color: var(--corB);
+        border: none;
+        padding: 1vh;
+        font-size: 4vh;
+        font-weight: bold;
+        font-family: sans-serif;
+        letter-spacing: 0.15vw;
+        border-radius: 0.25vw;
+        margin-top: 8vh;
+    }
+    .bgWhite input[type=submit]:hover{
+        cursor: pointer;
+    }

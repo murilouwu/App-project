@@ -168,7 +168,6 @@
             color: var(--corB);
             font: 700 .75rem 'Montserrat';
             letter-spacing: .08rem;
-            text-transform: uppercase;
         }
 
         .text-subheadline {
@@ -235,9 +234,9 @@
             </picture>
         </figure>
         <div class="headline">
-            <img src="https://raw.githubusercontent.com/murilouwu/CronometraisIMGS/main/Logo2.png">
+            <img src="../<?php echo $_SESSION['user'][0]['IM_Logo'];?>">
             <h2 class="text-headline">Editar Perfil</h2>
-            <h3 class="text-subheadline">Cronometrais, edite seu perfil aqui!</h2>
+            <h3 class="text-subheadline"><?php echo $_SESSION['user'][0]['NM_CEO'];?>, edite seu perfil aqui!</h2>
         </div>
         <form method="post" enctype="multipart/form-data">
             <input name="ImgFileCAD" type="file" id="fotoLogoCad" accept="image/*"/>
@@ -252,11 +251,11 @@
                     });
                 </script>
                 <span>
-                    <label for="NewNameEmpress" class="text-small-uppercase">Nome da empresa (Cronometrais)</label>
+                    <label for="NewNameEmpress" class="text-small-uppercase">Nome da empresa (<?php echo $_SESSION['user'][0]['NM_Provedora'];?>)</label>
                     <input class="text-body" id="NewNameEmpress" name="NameEmpres" type="text">
                 </span>
                 <span>
-                    <label for="NewCEOInput" class="text-small-uppercase">Nome do CEO (Murilaw)</label>
+                    <label for="NewCEOInput" class="text-small-uppercase">Nome do CEO (<?php echo $_SESSION['user'][0]['NM_CEO'];?>)</label>
                     <input class="text-body" id="NewCEOInput" name="CEO" type="text">
                 </span>
                 <span>
