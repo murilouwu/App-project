@@ -27,7 +27,7 @@
                     <input name="LogBases" type="text" placeholder="Nome da Empresa ou CNPJ" />
                     <input name="LogEmail" type="email" placeholder="Email" />
                     <input name="LogPassW" type="password" placeholder="Senha" minlength="5"/>
-                    <a href="#">esqueceu a senha?(função em breve)</a>
+                    <a href="resurck.php">esqueceu a senha?(função em breve)</a>
                     <input name="Logbtn" type="submit" value="Entrar">
                 </form>
             </div>
@@ -123,7 +123,7 @@
                                     let btn = document.querySelector('#btnimageFun');
                                     btn.setAttribute('class', 'btnFile disBtn');
                                     btn.setAttribute('for', '');
-                                    btn.innerHTML = '<i class="fa-solid fa-image"></i>Imagem Pronta';
+                                    btn.innerHTML = '<i class="fa-solid fa-image"></i>logo Enviada';
                                 });
                             </script>
                     </div>
