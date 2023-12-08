@@ -25,9 +25,10 @@
             padding: 2vh 1vw 2vh 1vw;
         }
 
-        input{
+        input, textarea{
             margin: 0vh 0vw 1vh 0vw;
             width: 100%;
+            resize: none;
         }
 
         figure {
@@ -76,7 +77,7 @@
             font: 700 16px 'Montserrat', sans-serif;
         }
 
-        input{
+        input, textarea{
             background: none;
             border: none;
             border-bottom: 2px solid var(--corB);
@@ -84,7 +85,7 @@
             outline: none;
         }
 
-        input:required{
+        input:required, textarea:required{
             box-shadow: none;
             outline: none;
         }
@@ -106,7 +107,7 @@
             transform: translate(0, 0);
         }
 
-        .inputs--invalid input {
+        .inputs--invalid input, .inputs--invalid textarea {
             animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
             background: url(//my-assets.netlify.com/codepen/dailyui-001/ico-invalid.svg) center right no-repeat;
             border-bottom: 2px solid var(--corD);
@@ -186,7 +187,10 @@
             justify-content: center;
             padding: 6vh 1vw 5vh 1vw;
         }
-
+        .ImgFileCAD:required ~ .btnFile{
+            background-color: var(--corD);
+            color: var(--corC);
+        }
         .btnFile{
             border-radius: 20px;
             border: none;
@@ -232,13 +236,29 @@
             width: 80%;
             margin-bottom: 6vh;
         }
-            .divImgsBtns img{
-                width: 20vh;
-                height: 20vh;
+            .divImgsBtns .imag{
+                display: flex;
+                transform: none;
+                transition: none;
+                width: 40%;
+                height: 12vh;
                 background-color: var(--Invisible);
                 border: none;
                 border-radius: 0px;
+                background-size: contain;
+                background-repeat: no-repeat;
             }
+                .divImgsBtns .imag:hover{
+                    border-bottom: 3px solid var(--corC);
+                    cursor: pointer;
+                }
+                    #Check1:checked ~ .imagA{
+                        filter: sepia(80%);
+                    }
+
+                    #Check2:checked ~ .imagB{
+                        filter: sepia(80%);
+                    }
     </style>
     <body>
         <main>
@@ -252,21 +272,21 @@
                 <?php
                     if($_SESSION['user'][0]['AS_Assinatura'] == 0){//assinatura de vans
                         echo '
-                            <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true" class="imag" for="Check1">
                             <input type="checkbox" name="vans" id="Check1" class="ocultar">
+                            <label style="background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true);" class="imag imagA" for="Check1"></label>
                         ';
                     }else if($_SESSION['user'][0]['AS_Assinatura'] == 1){//assinatura de onibus
                         echo '
-                            <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true" class="imag" for="Check2">
                             <input type="checkbox" name="onibus" id="Check2" class="ocultar">
+                            <label style="background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true);" class="imag imagB" for="Check2"></label>
                         ';
 
                     }else if($_SESSION['user'][0]['AS_Assinatura'] == 2){//assinatura conjuta
                         echo '
-                            <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true" class="imag" for="Check1">
                             <input type="checkbox" name="vans" id="Check1" class="ocultar">
-                            <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true" class="imag" for="Check2">
+                            <label style="background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true);" class="imag imagA" for="Check1"></label>
                             <input type="checkbox" name="onibus" id="Check2" class="ocultar">
+                            <label style="background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true);" class="imag imagB" for="Check2"></label>
                         ';
                     }
                 ?>
@@ -275,34 +295,38 @@
             <h3 class="text-subheadline"><?php echo $_SESSION['user'][0]['NM_CEO'];?>, Adicione os veículos da empresa aqui!</h2>
         </div>
         <form method="post" enctype="multipart/form-data">
-            <input name="ImgFileCAD" type="file" id="fotoLogoCad" accept="image/*"/>
+            <input name="ImgFileCAD" type="file" id="fotoLogoCad" accept="image/*" required/>
             <div class="mainform">
-                <label class="btnFile" for="fotoLogoCad" id="btnimageFun"><i class="fa-solid fa-angles-up"></i><i class="fa-solid fa-image"></i> Mudar logo</label>
+                <label class="btnFile" for="fotoLogoCad" id="btnimageFun"><i class="fa-solid fa-angles-up"></i><i class="fa-solid fa-image"></i> Adicione Imagem do Veículo</label>
                 <script>
                     $("#fotoLogoCad").change(function(){
                         let btn = document.querySelector('#btnimageFun');
                         btn.setAttribute('class', 'btnFile disBtn');
                         btn.setAttribute('for', '');
-                        btn.innerHTML = '<i class="fa-solid fa-image"></i>Nova Logo Pronta';
+                        btn.innerHTML = '<i class="fa-solid fa-image"></i>Imagem Pronta';
                     });
                 </script>
                 <span>
-                    <label for="NewNameEmpress" class="text-small-uppercase">Nome da empresa (<?php echo $_SESSION['user'][0]['NM_Provedora'];?>)</label>
-                    <input class="text-body" id="NewNameEmpress" name="NameEmpres" type="text">
+                    <label for="PlacaInput" class="text-small-uppercase">Placa do veículo</label>
+                    <input class="text-body" id="PlacaInput" name="Placa" type="text" required>
                 </span>
                 <span>
-                    <label for="NewCEOInput" class="text-small-uppercase">Nome do CEO (<?php echo $_SESSION['user'][0]['NM_CEO'];?>)</label>
-                    <input class="text-body" id="NewCEOInput" name="CEO" type="text">
+                    <label for="RotaInput" class="text-small-uppercase">Nome da Rota</label>
+                    <input class="text-body" id="RotaInput" name="Rota" type="text" required>
                 </span>
                 <span>
-                    <label for="NewpassInput" class="text-small-uppercase">Senha</label>
-                    <input class="text-body" id="NewpassInput" name="pass" type="password">
+                    <label for="DesInput" class="text-small-uppercase">Descrição do veículo</label>
+                    <textarea class="text-body" id="DesInput" name="Des" required></textarea>
+                </span>
+                <span>
+                    <label for="BagInput" class="text-small-uppercase">Quantidade de Bagageiro</label>
+                    <input class="text-body" id="BagInput" name="Bag" type="number" required>
                 </span>
             </div>
-            <input class="text-small-uppercase" name="submitEdit" type="submit" value="editar">
+            <input class="text-small-uppercase" name="submitADDVec" type="submit" value="Adicionar">
         </form>
         <script>
-            var inputs = document.querySelectorAll( 'input[type=text], input[type=password]');
+            var inputs = document.querySelectorAll( 'input[type=text], input[type=password], input[type=number], textarea' );
             for (i = 0; i < inputs.length; i ++) {
                 var inputEl = inputs[i];
                 if( inputEl.value.trim() !== '' ) {
@@ -342,7 +366,7 @@
             function onSubmit(ev){
                 var inputsWrappers = ev.target.parentNode.querySelectorAll( 'span' );
                 for (i = 0; i < inputsWrappers.length; i ++) {
-                    input = inputsWrappers[i].querySelector( 'input[type=text], input[type=password]' );
+                    input = inputsWrappers[i].querySelector( 'input[type=text], input[type=password], input[type=number], textarea' );
                     if ( input.checkValidity() == false ) {
                     inputsWrappers[i].classList.add( 'inputs--invalid' );
                     } else if ( input.checkValidity() == true ) {

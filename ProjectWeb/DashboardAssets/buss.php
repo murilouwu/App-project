@@ -15,10 +15,7 @@
     );
 ?>
 
-<?php
-    $name = "<h4>Em Breve</h4>";
-    echo $name;
-?>
+
 
 <?php 
     $html->foot();

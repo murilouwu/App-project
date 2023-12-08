@@ -42,7 +42,6 @@ CREATE TABLE onibus(
     DS_Descricao VARCHAR(200),
     BG_Bagagem INT,
     AV_Avaliacao INT,
-    BA_Bagagem TINYINT,
     ST_Status VARCHAR(15),
     IM_Foto LONGTEXT,
     id_Provedora INT,
