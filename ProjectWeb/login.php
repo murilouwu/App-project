@@ -25,9 +25,9 @@
                 <form method="post">
                     <h1>Entrar</h1>
                     <input name="LogBases" type="text" placeholder="Nome da Empresa ou CNPJ" />
-                    <input name="LogEmail" type="email" placeholder="Email" />
+                    <input name="LogEmail" type="email" placeholder="E-mail" />
                     <input name="LogPassW" type="password" placeholder="Senha" minlength="5"/>
-                    <a href="resurck.php">esqueceu a senha?(função em breve)</a>
+                    <a href="resurck.php?pass=true">esqueceu a senha?</a>
                     <input name="Logbtn" type="submit" value="Entrar">
                 </form>
             </div>
@@ -58,7 +58,7 @@
                                             lbl.classList.toggle('selecionado', i === index);
                                         });
 
-                                        document.getElementById('price').textContent = 'Para empresas de '+ass[0][index]+': R$'+ass[1][index]+',00 por cadastro';
+                                        document.getElementById('price').textContent = 'Para empresas de '+ass[0][index]+': R$'+ass[1][index]+',00 pelo cadastro';
                                     });
                                 });
                             </script>
@@ -66,7 +66,7 @@
                     <div class="scrool">
                         <input name="CeoNameCAD" type="text" placeholder="Nome do CEO" />
                         <input name="EmpNameCAD" type="text" placeholder="Nome da Empresa" />
-                        <input name="CtEmailCAD" type="email" placeholder="Email de Contato" />
+                        <input name="CtEmailCAD" type="email" placeholder="E-mail de Contato" />
                         <input name="CeoCNPJCAD" type="text" id="CNPJ" placeholder="CNPJ" maxlength="17"/>
                             <script>
                                 let ess = false;

@@ -226,7 +226,6 @@
                 }
     </style>
     <body>
-        <link rel="stylesheet" href="style.css">
         <main>
         <figure>
             <picture>
@@ -263,7 +262,8 @@
                     <input class="text-body" id="NewpassInput" name="pass" type="password">
                 </span>
             </div>
-            <input class="text-small-uppercase" id="submit" type="submit" value="editar">
+            <input class="text-small-uppercase" name="submitEdit" type="submit" value="editar">
+            <input class="text-small-uppercase" name="submitDel" type="submit" value="Deletar Conta">
         </form>
         <script>
             var inputs = document.querySelectorAll( 'input[type=text], input[type=password]');
