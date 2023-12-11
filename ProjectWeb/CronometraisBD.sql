@@ -45,9 +45,9 @@ CREATE TABLE onibus(
     ST_Status VARCHAR(15),
     IM_Foto LONGTEXT,
     id_Provedora INT,
-    FOREIGN KEY (id_Provedora) REFERENCES Provedora(CD_Provedora),
+    FOREIGN KEY (id_Provedora) REFERENCES provedora(CD_Provedora),
     id_Horarios INT,
-    FOREIGN KEY (id_Horarios) REFERENCES Horarios(CD_Horarios)
+    FOREIGN KEY (id_Horarios) REFERENCES horarios(CD_Horarios)
 );
 
 CREATE TABLE tempos(
@@ -56,7 +56,7 @@ CREATE TABLE tempos(
     TP_Final INT,
     DS_Local VARCHAR(200),
     id_Horarios INT,
-    FOREIGN KEY (id_Horarios)REFERENCES Horarios(CD_Horarios)
+    FOREIGN KEY (id_Horarios)REFERENCES horarios(CD_Horarios)
 );
 
 CREATE TABLE avaliacao(
@@ -64,7 +64,7 @@ CREATE TABLE avaliacao(
     DS_Comentario LONGTEXT,
     NT_Nota INT,
     id_Usuario INT,
-    FOREIGN KEY (id_Usuario) REFERENCES Usuario(CD_Usuario),
+    FOREIGN KEY (id_Usuario) REFERENCES usuario(CD_Usuario),
     id_Onibus INT,
-    FOREIGN KEY (id_Onibus) REFERENCES Onibus(CD_Onibus)
+    FOREIGN KEY (id_Onibus) REFERENCES onibus(CD_Onibus)
 );

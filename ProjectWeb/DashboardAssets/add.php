@@ -272,20 +272,20 @@
                 <?php
                     if($_SESSION['user'][0]['AS_Assinatura'] == 0){//assinatura de vans
                         echo '
-                            <input type="checkbox" name="vans" id="Check1" class="ocultar">
+                            <input type="radio" name="veicu" id="Check1" class="ocultar">
                             <label style="background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true);" class="imag imagA" for="Check1"></label>
                         ';
                     }else if($_SESSION['user'][0]['AS_Assinatura'] == 1){//assinatura de onibus
                         echo '
-                            <input type="checkbox" name="onibus" id="Check2" class="ocultar">
+                            <input type="radio" name="veicu" id="Check2" class="ocultar">
                             <label style="background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true);" class="imag imagB" for="Check2"></label>
                         ';
 
                     }else if($_SESSION['user'][0]['AS_Assinatura'] == 2){//assinatura conjuta
                         echo '
-                            <input type="checkbox" name="vans" id="Check1" class="ocultar">
+                            <input type="radio" name="veicu" id="Check1" class="ocultar">
                             <label style="background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true);" class="imag imagA" for="Check1"></label>
-                            <input type="checkbox" name="onibus" id="Check2" class="ocultar">
+                            <input type="radio" name="veicu" id="Check2" class="ocultar">
                             <label style="background-image: url(https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true);" class="imag imagB" for="Check2"></label>
                         ';
                     }
@@ -317,6 +317,38 @@
                 <span>
                     <label for="DesInput" class="text-small-uppercase">Descrição do veículo</label>
                     <textarea class="text-body" id="DesInput" name="Des" required></textarea>
+                    <script>
+                        $(document).ready(function() {
+                            function getTipoVeiculo() {
+                                if ($('#Check1').is(':checked')) {
+                                    return 'Uma Van';
+                                } else if ($('#Check2').is(':checked')) {
+                                    return 'Um Ônibus';
+                                } else {
+                                    return '';
+                                }
+                            }
+                            $('#DesInput').focus(function() {
+                                let veiculo = getTipoVeiculo();
+                                if ($(this).data('focus') !== true) {
+                                    $(this).val(`${veiculo}, `);
+                                    $(this).data('focus', true);
+                                }
+                            });
+                            $('#DesInput').blur(function() {
+                                $(this).data('focus', false);
+                            });
+                            $('input[type=checkbox]').change(function() {
+                                let veiculo = getTipoVeiculo();
+                                $('#DesInput').val(`${veiculo}, `);
+                                if (veiculo === '') {
+                                    $('#submitADDVec').prop('disabled', true);
+                                } else {
+                                    $('#submitADDVec').prop('disabled', false);
+                                }
+                            });
+                        });
+                    </script>
                 </span>
                 <span>
                     <label for="BagInput" class="text-small-uppercase">Quantidade de Bagageiro</label>
@@ -379,4 +411,59 @@
     </body>
 <?php 
     $html->foot();
+
+    if(isset($_POST['submitADDVec'])){
+        $busData = array(
+            $_POST['Placa'],
+            $_POST['Rota'],
+            $_POST['Des'],
+            $_POST['Bag'],
+            $_FILES['ImgFileCAD']
+        );
+    
+        if(isset($busData[4]) && !empty($busData[4]['name'])){
+            $partes = explode('.', $busData[4]['name']);
+            $extensao = end($partes);
+    
+            $imgLocal = 'assets/imgs/imgBus/'.$busData[0].'_'.$busData[1].'Logo.'.$extensao;
+            $folderFile = '../assets/imgs/imgBus/';
+            $nameFile = $busData[0].'_'.$busData[1].'Logo.'.$extensao;
+    
+            $imgVer = $html->upload($busData[4], $folderFile, $nameFile);
+    
+            if($imgVer !== true){
+                $html->mensage('Erro no upload!');
+                if($imgVer !== false){
+                    $html->mensage($imgVer);
+                }
+            } else {
+                $busData[4] = $imgLocal;
+    
+                // Adições e correções nas colunas
+                $date = array('CD_Placa', 'RT_Rota', 'DS_Descricao', 'BG_Bagagem', 'AV_Avaliacao', 'ST_Status', 'IM_Foto', 'id_Provedora', 'id_Horarios');
+                $verifcs = array(0);
+                $configs = array(array());
+    
+                // Reordem de busData
+                $busFinal = array($busData[0], $busData[1], $busData[2], $busData[3], 0, 'Em edição', $busData[4], $_SESSION['user'][0]['CD_Provedora'], null);
+    
+                $busAction = new BankUse();
+                $busAction->NameTable = 'onibus';
+                $busAction->Dates = $date;
+    
+                $busFun = $busAction->InsertUser($pdo, $busFinal, $verifcs, $configs);
+    
+                if($busFun === 'sucesso'){
+                    $html->mensage($busFun);
+                } else {
+                    $html->mensage($busFun);
+                    if(unlink($busData[4])){} else {
+                        $html->mensage("ERRO 404");
+                    }
+                }
+            }
+        } else {
+            $html->mensage("Envie uma imagem!");
+        }
+    }
 ?>

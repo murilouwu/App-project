@@ -319,4 +319,31 @@
     </body>
 <?php 
     $html->foot();
+    if(isset($_POST['submitEdit'])){
+        if(!empty($_POST['NameEmpres']) && !empty($_POST['CEO']) && !empty($_POST['pass'])){
+            $newName = !empty($_POST['NameEmpres']) ? $_POST['NameEmpres']: $_SESSION['user'][0]['NameEmpres'];
+            $newCEO = !empty($_POST['CEO']) ? $_POST['CEO']: $_SESSION['user'][0]['CEO'];
+            $newPass = !empty($_POST['pass']) ? $_POST['pass']: $_SESSION['user'][0]['pass'];
+
+            // Inicializa a classe BankUse
+            $userAction = new BankUse();
+            $userAction->NameTable = 'provedora';
+            $userAction->Dates = array('NM_Provedora', 'NM_CEO', 'Key_senha');
+
+            // Atualiza os dados na tabela
+            $updateData = array('NM_Provedora', 'NM_CEO', 'Key_senha');
+            $values = array('NM_Provedora' => $newName, 'NM_CEO' => $newCEO, 'Key_senha' => $html->Cripto($newPass));
+            $where = 'CD_Provedora = ' . $_SESSION['user'][0]['CD_Provedora'];
+
+            $result = $userAction->UpdateUser($pdo, $updateData, $values, $where);
+
+            if($result === 'sucesso.'){
+                $html->mensage("Dados atualizados com sucesso!");
+            } else {
+                $html->mensage("Erro ao atualizar os dados");
+            }
+        }else{
+            $html->mensage("Para editar prencha pelo menos um campo.");
+        }
+    }
 ?>

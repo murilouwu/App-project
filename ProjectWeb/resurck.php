@@ -86,11 +86,11 @@
                             <form method="post" class="mainBlock">
                                 <div class="inputUl" style="margin-top: 3vh; margin-bottom: 1vh;">
                                     <i class="fa-solid fa-lock"></i>
-                                    <input type="password" name="pass" placeholder="Nova senha" id="inputA">
+                                    <input type="password" name="pass" placeholder="Nova senha" id="inputA" required >
                                 </div>
                                 <div class="inputUl" style="margin-top: 1vh;">
                                     <i class="fa-solid fa-anchor-lock"></i>
-                                    <input type="password" name="pass" placeholder="Confirmar nova senha">
+                                    <input type="password" name="passA" placeholder="Confirmar nova senha" required>
                                 </div>
                                 <input type="submit" value="Mudar" name="Enviar2">
                             </form>
@@ -108,25 +108,76 @@
     </body>
 <?php
     $html->foot();
+
+    function gerarCodigo() {
+        return rand(1000, 9999);
+    }
+
     if(isset($_POST['Enviar0'])){
-        //criar code;
-        //enviar no email;
-        $_SESSION['pass'] = 0;
-        $html->Atalho('resurck.php');
+        $date = array('NM_Provedora', 'NE_Email', 'CD_CNPJ', 'AS_Assinatura', 'IM_Logo', 'NM_CEO', 'Key_senha');
+        $UserAction = new BankUse();
+        $UserAction->NameTable = 'provedora';
+        $UserAction->Dates = $date;
+        $where = 'WHERE NE_Email = "'.$_POST['Email'].'";';
+
+        $UserFun = $UserAction->GetUser($pdo, "", $where);
+        if(is_string($UserFun)){
+            $html->mensage("Esse e-mail não está cadastrado no sistema");
+        }else{
+            $a = 0;
+            $cd = array();
+            foreach($UserFun as $row){
+                $cd[$a] = $row;
+                $a++;
+            }
+
+            $_SESSION['cd'] = $cd[0]['CD_Provedora'];
+            $codigo = gerarCodigo();
+            $_SESSION['code'] = $codigo;
+            $email_destinatario = $_POST['Email'];
+            $assunto = 'Código de Verificação';
+            $mensagem = "Seu código de verificação é: ".$codigo;
+
+            $headers = 'From: murilo.mendes11@etec.sp.gov.br' . "\r\n" .
+                'Reply-To: '.$_POST['Email'].'' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+            mail($email_destinatario, $assunto, $mensagem, $headers);
+            
+            $_SESSION['pass'] = 0;
+            $html->Atalho('resurck.php');
+        }
     }
     if(isset($_POST['Enviar1'])){
-        //verificar code;
-        //reage a verificação;
-        $_SESSION['pass'] = 1;
-        $html->Atalho('resurck.php');
+        $code = $_POST['inA'].$_POST['inB'].$_POST['inC'].$_POST['inD'];
+        if($code == $_SESSION['code']){
+            $_SESSION['pass'] = 1;
+            $html->Atalho('resurck.php');
+        }else{
+            $html->mensage('O código está incorreto!');
+        }
     }
     if(isset($_POST['Enviar2'])){
-        //atualizar senha
-        echo '
-            <script>
-                alert("Pronto");
-                redirect("login.php?log=0");
-            </script>
-        ';
+        if($_POST['pass'] == $_POST['passA']){
+            $date = array('NM_Provedora', 'NE_Email', 'CD_CNPJ', 'AS_Assinatura', 'IM_Logo', 'NM_CEO', 'Key_senha');
+            $UserAction = new BankUse();
+            $UserAction->NameTable = 'provedora';
+            $UserAction->Dates = $date;
+
+            $dateModific = array($date[6]);
+            $passFinal = $html->Cripto($_POST['pass']);
+            $vls = array('Key_senha' => $passFinal);
+
+            $where = 'CD_Provedora = '.$_SESSION['cd'];
+
+            $res = $UserAction->UpdateUser($pdo, $dateModific, $vls, $where);
+            echo '
+                <script>
+                    alert("Pronto");
+                    redirect("login.php?log=0");
+                </script>
+            ';
+        }else{
+            $html->mensage('As senhas tem que ser iguais!!!');
+        }
     }
 ?>

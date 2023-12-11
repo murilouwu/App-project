@@ -16,7 +16,7 @@
 ?>
     <style>
         body{
-            background-color: var(--corC);
+            background-color: var(--corD);
         }
         .list{
             display: flex;
@@ -27,7 +27,7 @@
             overflow: scroll;
         }
             .card{
-                width: 25vw;
+                width: auto;
                 height: 23vh;
                 display: flex;
                 flex-direction: row;
@@ -50,6 +50,7 @@
                     justify-content: space-around;
                     width: 46%;
                     padding-left: 1vw;
+                    padding-right: 1vw;
                 }
                     .card .des .Rota{
                         color: var(--corC);
@@ -59,7 +60,7 @@
                         font-style: italic;
                     }
                     .card .des .placa{
-                        color: var(--corB);
+                        color: var(--corC);
                         font-size: 1.5vh;
                     }
                     .card .des .avali{
@@ -68,7 +69,7 @@
                         font-weight: bold;
                     }
                     .card .des .status{
-                        color: var(--corA);
+                        color: var(--corC);
                         font-weight: bold;
                         font-family: monospace;
                         font-size: 2.5vh;
@@ -85,6 +86,7 @@
                             background-color: var(--corB);
                             border: none;
                             padding: 0.5vw;
+                            border-radius: 0.25vw;
                         }
                         
                         .card .des .btns .Del{
@@ -93,189 +95,52 @@
                             .card .des .btns .btnOpration:hover{
                                 cursor: pointer;
                             }
+            .alert{
+                font-size: 2vh;
+                font-style: italic;
+                font-family: monospace;
+                letter-spacing: 0.5vh;
+                color: var(--corC);
+                font-weight: bold;
+            }
     </style>
     <body>
         <div class="list">
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Santa Isabel</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">*****</label>
-                    <h3 class="status">Em Uso</h3>
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Caraguava</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">?</label>
-                    <h3 class="status">Em Edição...</h3> 
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Santa Isabel</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">*****</label>
-                    <h3 class="status">Em Uso</h3>
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Caraguava</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">?</label>
-                    <h3 class="status">Em Edição...</h3> 
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Santa Isabel</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">*****</label>
-                    <h3 class="status">Em Uso</h3>
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Caraguava</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">?</label>
-                    <h3 class="status">Em Edição...</h3> 
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Santa Isabel</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">*****</label>
-                    <h3 class="status">Em Uso</h3>
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Caraguava</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">?</label>
-                    <h3 class="status">Em Edição...</h3> 
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Santa Isabel</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">*****</label>
-                    <h3 class="status">Em Uso</h3>
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Caraguava</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">?</label>
-                    <h3 class="status">Em Edição...</h3> 
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicA.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Santa Isabel</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">*****</label>
-                    <h3 class="status">Em Uso</h3>
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://github.com/murilouwu/CronometraisIMGS/blob/main/VeicB.png?raw=true" class="imgcard">
-                <div class="des">
-                    <h2 class="Rota">Caraguava</h2>
-                    <h4 class="placa">01-ABCG</h4>
-                    <label class="avali">?</label>
-                    <h3 class="status">Em Edição...</h3> 
-                    <div class="btns">
-                        <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
-                        <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
-                    </div>
-                </div>
-            </div>
+            <?php
+                $userProvedora = $_SESSION['user'][0]['CD_Provedora'];
+                $dateRequire = "CD_Onibus, CD_Placa, RT_Rota, AV_Avaliacao, ST_Status, IM_Foto";
+                $where = "WHERE id_Provedora = $userProvedora";
+                
+                $userAction = new BankUse();
+                $userAction->NameTable = 'onibus';
+                
+                $stmt = $userAction->GetUser($pdo, $dateRequire, $where);
+
+                if($stmt === 'Não Encontrado'){
+                    echo '<h2 class="alert">Sem veículos da '.$_SESSION['user'][0]['NM_Provedora'].' cadastrados no sistema</h2>';
+                } else {
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $avaliacao = $row['AV_Avaliacao'] == null ? "?":str_repeat("*", $row['AV_Avaliacao']);
+                        echo '<div class="list">
+                                <div class="card">
+                                    <img src="../'.$row['IM_Foto'].'" class="imgcard">
+                                    <div class="des">
+                                        <h2 class="Rota">'.$row['RT_Rota'].'</h2>
+                                        <h4 class="placa">'.$row['CD_Placa'].'</h4>
+                                        <label class="avali">'.$avaliacao.'</label>
+                                        <h3 class="status">'.$row['ST_Status'].'</h3>
+                                        <div class="btns">
+                                            <button class="Del btnOpration"><i class="fa-solid fa-trash"></i></button>
+                                            <button class="btnOpration"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="btnOpration"><i class="fa-regular fa-calendar-plus"></i></button>
+                                            <button class="btnOpration"><i class="fa-solid fa-clock"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>';
+                    }
+                }
+            ?>
         </div>
     </body>
 
